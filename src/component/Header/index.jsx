@@ -3,7 +3,6 @@ import './style.scss'
 import {NavLink} from "react-router-dom";
 
 
-
 const Header = () => {
     return <div className='P-home G-flex G-align-center'>
         <div className='G-container'>
@@ -22,9 +21,16 @@ const Header = () => {
                     <li>
                         <NavLink to={'/Contact'}>Contact</NavLink>
                     </li>
-                    <div className='G-flex P-header-heart-basket'>
-                        <span className='icon-heart-fill'><p>(0)</p></span>
-                        <span className='icon-basket'><p>(0)</p></span>
+                    <div className='G-flex G-align-center P-header-heart-basket'>
+                        <div style={{padding:'0 5px'}} className='G-flex G-align-center'>
+                            <span className='icon-heart-fill'></span>
+                            <div className='P-product-like'>0</div>
+                        </div>
+                        <div className='G-flex G-align-center'>
+                            <span className='icon-basket'></span>
+                            <div className='P-product-like'>0</div>
+                        </div>
+
                     </div>
                 </ul>
             </div>

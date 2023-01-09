@@ -1,4 +1,4 @@
-//@import "../react-my-first-web-site/src/assets/icon-fonts/icomoon/style.css";
+
 
 .P-home{
   width: 100%;
@@ -31,4 +31,14 @@
   color:white;
  width: 20px;
   margin: 0 2px;
+}
+
+.P-product-like{
+  width: 25px;
+  height: 25px;
+  border-radius:50%;
+  border: 1px solid white;
+  text-align: center;
+  margin: 0 5px;
+  color: white;
 }
