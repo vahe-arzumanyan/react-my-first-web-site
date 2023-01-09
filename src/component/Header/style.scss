@@ -1,0 +1,34 @@
+//@import "../react-my-first-web-site/src/assets/icon-fonts/icomoon/style.css";
+
+.P-home{
+  width: 100%;
+  height: 73px;
+  background-color: #3D464D ;
+}
+
+.P-logo-multi{
+  color:goldenrod;
+  background-color: black;
+  padding: 3px;
+}
+
+.P-logo-shop{
+  color: black;
+  background-color: goldenrod;
+  padding: 3px;
+}
+
+.P-header-ul a{
+  color:white;
+  margin: 0 30px;
+
+  &:hover{
+    color:goldenrod;
+  }
+}
+
+.P-header-heart-basket p{
+  color:white;
+ width: 20px;
+  margin: 0 2px;
+}

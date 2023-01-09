@@ -1,6 +1,6 @@
 import React from "react";
 import './App.scss';
-import Home from "./component/Home";
+import Header from "./component/Header";
 
 
 // import {Switch, Route, NavLink, Link, Redirect} from 'react-router-dom';
@@ -8,7 +8,7 @@ import Home from "./component/Home";
 
 const App = () => {
   return <div>
-<Home />
+<Header />
   </div>
 }
 
