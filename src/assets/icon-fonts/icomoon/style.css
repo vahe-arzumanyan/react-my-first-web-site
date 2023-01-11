@@ -13,7 +13,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: never;
+
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -27,10 +27,17 @@
 
 .icon-login:before {
   content: "\e902";
+  font-size: 20px;
+  color:white;
+  margin: 0 10px;
 }
 .icon-heart-fill:before {
   content: "\e900";
+  font-size: 18px;
+  color:white;
 }
 .icon-basket:before {
   content: "\e901";
+  font-size: 18px;
+  color:white;
 }

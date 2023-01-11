@@ -4,6 +4,9 @@ import {NavLink} from "react-router-dom";
 
 
 const Header = () => {
+    const handleOpenLoginModal = ()=>{
+        alert('asd')
+    }
     return <div className='P-home G-flex G-align-center'>
         <div className='G-container'>
             <div className='G-flex G-align-center G-justify-between'>
@@ -30,6 +33,7 @@ const Header = () => {
                             <span className='icon-basket'></span>
                             <div className='P-product-like'>0</div>
                         </div>
+                        <button onClick={handleOpenLoginModal} className='icon-login-btn'><span className='icon-login'></span></button>
 
                     </div>
                 </ul>
