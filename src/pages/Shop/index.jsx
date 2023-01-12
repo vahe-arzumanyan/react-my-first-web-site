@@ -3,8 +3,8 @@ import './style.scss'
 
 
 const Shop = () => {
-    return <div className='P-home'>
-
+    return <div className='P-shop'>
+        <p>slkdlsd</p>
     </div>
 
 }

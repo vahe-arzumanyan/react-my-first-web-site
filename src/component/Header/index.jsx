@@ -4,10 +4,10 @@ import {NavLink} from "react-router-dom";
 
 
 const Header = () => {
-    const handleOpenLoginModal = ()=>{
-        alert('asd')
+    const handleOpenLoginModal = () => {
+
     }
-    return <div className='P-home G-flex G-align-center'>
+    return <div className='P-header G-flex G-align-center'>
         <div className='G-container'>
             <div className='G-flex G-align-center G-justify-between'>
                 <div className='G-flex'>
@@ -16,16 +16,16 @@ const Header = () => {
                 </div>
                 <ul className='G-flex P-header-ul'>
                     <li>
-                        <NavLink to={'/Home'}>Home</NavLink>
+                        <NavLink to={"/Home"}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/Shop'}>Shop</NavLink>
+                        <NavLink to={"/Shop"}>Shop</NavLink>
                     </li>
                     <li>
-                        <NavLink to={'/Contact'}>Contact</NavLink>
+                        <NavLink to={"/Contact"}>Contact</NavLink>
                     </li>
                     <div className='G-flex G-align-center P-header-heart-basket'>
-                        <div style={{padding:'0 5px'}} className='G-flex G-align-center'>
+                        <div style={{padding: '0 5px'}} className='G-flex G-align-center'>
                             <span className='icon-heart-fill'></span>
                             <div className='P-product-like'>0</div>
                         </div>
@@ -33,14 +33,13 @@ const Header = () => {
                             <span className='icon-basket'></span>
                             <div className='P-product-like'>0</div>
                         </div>
-                        <button onClick={handleOpenLoginModal} className='icon-login-btn'><span className='icon-login'></span></button>
-
+                        <button onClick={handleOpenLoginModal} className='icon-login-btn'><span
+                            className='icon-login'></span></button>
                     </div>
                 </ul>
             </div>
         </div>
     </div>
-
 }
 
 export default Header;
