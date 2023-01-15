@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import './style.scss'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -6,22 +6,23 @@ import "slick-carousel/slick/slick-theme.css";
 import carouselMen from '../../assets/image/carousel-1.jpg';
 import carouselWomen from '../../assets/image/carousel-2.jpg';
 import carouselKids from '../../assets/image/carousel-3.jpg';
+import Carousel from "./Carousel";
 
 
 const Home = () => {
     const settingsSlider = {
         dots: false,
-        infinite: false,
-        speed: 500,
+        infinite: true,
+        speed: 1000,
         slidesToShow: 1,
-        slidesToScroll: 2,
         initialSlide: 0,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 3000,
+        autoplay: true,
         responsive: [
             {
-                breakpoint: 1024,
+                breakpoint: 1200,
                 settings: {
-                    slidesToShow: 3,
+                    slidesToShow: 1,
                     slidesToScroll: 3,
                     infinite: true,
                     dots: true
@@ -45,47 +46,39 @@ const Home = () => {
         ]
     };
     const [topSlick, setTopSlick] = useState([
-       {
+        {
             title: 'Men Fashion',
             description: 'Shop men shoes',
             carouselImg: carouselMen,
-           alt:'img'
+            alt: 'img'
         },
-       {
+        {
             title: 'Woman Fashion',
             description: 'Shop Women shoes',
             carouselImg: carouselWomen,
-           alt:'img'
+            alt: 'img'
 
-       },
+        },
         {
             title: 'Woman Fashion',
-            description: 'Shop Kidas shoes',
+            description: 'Shop Kids shoes',
             carouselImg: carouselKids,
-            alt:'img'
-
+            alt: 'img'
         }
-])
+    ])
 
 
-    
-    return <> 
+    return <>
         <div className='G-container'>
             <Slider {...settingsSlider}>
-                {topSlick.length ? topSlick.map((item, index)=>{
-                    return <div className='G-container'>
-                        <div key={index} style={{backgroundImage:`url(${item.carouselImg})`}} alt={item.alt} className='G-image-cover hh'>
-                            {/*<p>{item.title}</p>*/}
-                            {/*<p>{item.description}</p>*/}
-                        </div>
-                    </div>
-
+                {topSlick.length ? topSlick.map((item, index) => {
+                    return <Carousel item={item} key={index} />
                 }) : null}
             </Slider>
 
-</div>
+        </div>
 
     </>
 }
 
-        export default Home;
+export default Home;
