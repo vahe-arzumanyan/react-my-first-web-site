@@ -14,6 +14,7 @@ import Carousel from "./Carousel";
 import Offer from "./Offer";
 import ShippingInfo from "./Shipping";
 import Categories from "./categories/index";
+import UseFeaturedProduct from "./Featured";
 
 
 const Home = () => {
@@ -23,7 +24,7 @@ const Home = () => {
         speed: 1000,
         slidesToShow: 1,
         initialSlide: 0,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 2000,
         autoplay: true,
         arrows: false,
         responsive: [
@@ -75,67 +76,49 @@ const Home = () => {
         }
     ])
 
-// ============================== offer content / state ==============================
-
-    const [offer, setOffer] = useState([
-        {
-            title: 'save 20%',
-            description: 'Special Offer',
-            offerImg: offerImg1,
-            alt: 'img'
-        },
-        {
-            title: 'save 20%',
-            description: 'Special Offer',
-            offerImg: offerImg2,
-            alt: 'img'
-        }
-    ])
-
-// ============================== shipping content / state ==============================
-
-    const [shippingInfo, setShippingInfo] = useState([
-        {
-            title: 'Quality Product',
-            svgIcon: 'icon-done'
-        },
-        {
-            title: 'Free Shipping',
-            svgIcon: 'icon-shipping-car'
-        },
-        {
-            title: '14-Day Return',
-            svgIcon: 'icon-equal'
-        },
-        {
-            title: '24/7 Support',
-            svgIcon: 'icon-call'
-        }
-    ])
+// ============================== JSX ==============================
 
     return <>
         <div className='G-container'>
+
+            {/*============================== SLick Slider IMG ==============================*/}
+
             <div className='G-flex G-justify-between'>
                 <div className='P-home-slick'>
-                    <Slider {...settingsSlider}>
-                        {topSlick.length ? topSlick.map((item, index) => {
-                            return <Carousel item={item} key={index}/>
-                        }) : null}
-                    </Slider>
+                    {topSlick.length ?
+                        <Slider {...settingsSlider}>
+                            {topSlick.map((item, index) => {
+                                return <Carousel item={item} key={index}/>
+                            })}
+                        </Slider> : null}
                 </div>
-                <div>
-                    {offer.length ? offer.map((item, index) => {
-                        return <Offer item={item} key={index}/>
-                    }) : null}
+                   <Offer />
+
+            </div>
+            <div className='G-flex G-justify-between' style={{backgroundColor:'red'}}>
+                <ShippingInfo/>
+            </div>
+
+
+            {/*============================== shipping content / state ==============================*/}
+
+            <div className='G-container'>
+                <div className='G-flex G-center P-margin-categories'>
+                    <p className='P-title-categories'>CATEGORIES</p>
+                    <div className='P-categories-line'></div>
                 </div>
             </div>
-            <div className='G-justify-between' style={{margin: '30px 0'}}>
-                {shippingInfo.length ? shippingInfo.map((item, index) => {
-                    return <ShippingInfo item={item} key={index}/>
-                }) : null}
-            </div>
-<Categories />
+            <Categories/>
         </div>
+
+        <div className='G-container'>
+            <div className='G-flex G-center P-margin-categories'>
+                <p className='P-title-categories'>FEATURED PRODUCTS</p>
+                <div className='P-categories-line'></div>
+            </div>
+            <UseFeaturedProduct />
+        </div>
+
 
     </>
 }

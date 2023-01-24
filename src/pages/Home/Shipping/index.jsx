@@ -1,13 +1,38 @@
-import React from "react";
+import React, {useState} from "react";
 import './style.scss';
 
-const ShippingInfo = ({item}) =>{
-    return <div className='G-container'>
-<div className='G-center P-shipping'>
-    <span className={item.svgIcon} style={{margin:'0 15px'}}></span>
-    <p>{item.title}</p>
-</div>
+const ShippingInfo = ({item}) => {
+
+    const [shippingInfo, setShippingInfo] = useState([
+        {
+            title: 'Quality Product',
+            svgIcon: 'icon-done'
+        },
+        {
+            title: 'Free Shipping',
+            svgIcon: 'icon-shipping-car'
+        },
+        {
+            title: '14-Day Return',
+            svgIcon: 'icon-equal'
+        },
+        {
+            title: '24/7 Support',
+            svgIcon: 'icon-call'
+        }
+    ])
+
+    return <div>
+        {shippingInfo.length ? shippingInfo.map((item, index) => {
+            return <div item={item} key={index}>
+                <div className='G-center P-shipping'>
+                    <span className={item.svgIcon} style={{margin: '0 15px'}}></span>
+                    <p>{item.title}</p>
+                </div>
+            </div>
+        }) : null}
     </div>
 }
 
 export default ShippingInfo;
+
