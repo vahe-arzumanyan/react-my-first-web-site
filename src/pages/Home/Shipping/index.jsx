@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './style.scss';
 
-const ShippingInfo = ({item}) => {
+const ShippingInfo = () => {
 
     const [shippingInfo, setShippingInfo] = useState([
         {
@@ -22,9 +22,9 @@ const ShippingInfo = ({item}) => {
         }
     ])
 
-    return <div>
+    return <div className='G-flex G-justify-between'>
         {shippingInfo.length ? shippingInfo.map((item, index) => {
-            return <div item={item} key={index}>
+            return <div item={item} key={index} style={{margin:'50px 0'}}>
                 <div className='G-center P-shipping'>
                     <span className={item.svgIcon} style={{margin: '0 15px'}}></span>
                     <p>{item.title}</p>

@@ -1,10 +1,11 @@
 import React from "react";
 import './App.scss';
-import Header from "./component/Header";
+import Header from "./component/header";
 import {Route, Routes} from "react-router-dom"
-import Home from "./pages/Home";
-import Shop from "./pages/Shop";
-import Contact from "./pages/Contact";
+import Home from "./pages/home";
+import Shop from "./pages/shop";
+import Contact from "./pages/contact";
+import AdminPage from "./adminPage/component/adminPage";
 
 
 // import {Switch, Route, NavLink, Link, Redirect} from 'react-router-dom';
@@ -12,13 +13,16 @@ import Contact from "./pages/Contact";
 
 const App = () => {
     return <div>
-        <Header/>
-        <Routes>
-            <Route path={"/Home"} element={<Home/>}/>
-            <Route path={"/Shop"} element={<Shop/>}/>
-            <Route path={"/Contact"} element={<Contact/>}/>
-            {/*<Route path={'/Home'} element={<Home/>}/>*/}
-        </Routes>
+       <div>
+           {/*<Header/>*/}
+           {/*<Routes>*/}
+           {/*    <Route path={"/Home"} element={<Home/>}/>*/}
+           {/*    <Route path={"/Shop"} element={<Shop/>}/>*/}
+           {/*    <Route path={"/Contact"} element={<Contact/>}/>*/}
+           {/*    <Route path={'/Home'} element={<Home/>}/>*/}
+           {/*</Routes>*/}
+       </div>
+        <AdminPage />
     </div>
 }
 

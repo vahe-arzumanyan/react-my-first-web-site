@@ -8,13 +8,10 @@ import "slick-carousel/slick/slick-theme.css";
 import carouselMen from '../../assets/image/carousel-1.jpg';
 import carouselWomen from '../../assets/image/carousel-2.jpg';
 import carouselKids from '../../assets/image/carousel-3.jpg';
-import offerImg1 from '../../assets/image/offer-1.jpg';
-import offerImg2 from '../../assets/image/offer-2.jpg';
-import Carousel from "./Carousel";
-import Offer from "./Offer";
-import ShippingInfo from "./Shipping";
-import Categories from "./categories/index";
-import UseFeaturedProduct from "./Featured";
+import Carousel from "./carousel";
+import Offer from "./offer";
+import ShippingInfo from "./shipping";
+
 
 
 const Home = () => {
@@ -81,7 +78,7 @@ const Home = () => {
     return <>
         <div className='G-container'>
 
-            {/*============================== SLick Slider IMG ==============================*/}
+            {/*============================== SLick Slider start ==============================*/}
 
             <div className='G-flex G-justify-between'>
                 <div className='P-home-slick'>
@@ -92,15 +89,14 @@ const Home = () => {
                             })}
                         </Slider> : null}
                 </div>
-                   <Offer />
-
+                <Offer/>
             </div>
-            <div className='G-flex G-justify-between' style={{backgroundColor:'red'}}>
+
+            {/*============================== SLick Slider end ==============================*/}
+
                 <ShippingInfo/>
-            </div>
 
-
-            {/*============================== shipping content / state ==============================*/}
+                {/*============================== categories content  ==============================*/}
 
             <div className='G-container'>
                 <div className='G-flex G-center P-margin-categories'>
@@ -108,7 +104,7 @@ const Home = () => {
                     <div className='P-categories-line'></div>
                 </div>
             </div>
-            <Categories/>
+            {/*<Categories/>*/}
         </div>
 
         <div className='G-container'>
@@ -116,7 +112,7 @@ const Home = () => {
                 <p className='P-title-categories'>FEATURED PRODUCTS</p>
                 <div className='P-categories-line'></div>
             </div>
-            <UseFeaturedProduct />
+            {/*<UseFeaturedProduct/>*/}
         </div>
 
 

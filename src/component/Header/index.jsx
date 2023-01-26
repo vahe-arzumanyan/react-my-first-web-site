@@ -4,9 +4,11 @@ import {NavLink} from "react-router-dom";
 
 
 const Header = () => {
+
     const handleOpenLoginModal = () => {
-alert('sds')
+
     }
+
     return <div className='P-header G-flex G-align-center'>
         <div className='G-container'>
             <div className='G-flex G-align-center G-justify-between'>
