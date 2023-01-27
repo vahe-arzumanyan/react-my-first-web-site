@@ -8,7 +8,7 @@ import productImg5 from '../../../assets/image/product/product-5.jpg'
 import productImg6 from '../../../assets/image/product/product-6.jpg'
 import productImg7 from '../../../assets/image/product/product-7.jpg'
 import productImg8 from '../../../assets/image/product/product-8.jpg'
-import AdminHeader from "../../../adminPage/component/adminHeader";
+import AdminHeader from "../admin_header";
 
 
 const UseFeaturedProduct = () => {

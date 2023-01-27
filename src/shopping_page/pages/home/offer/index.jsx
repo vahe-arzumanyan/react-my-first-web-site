@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './style.scss';
-import offerImg1 from "../../../assets/image/offer-1.jpg";
-import offerImg2 from "../../../assets/image/offer-2.jpg";
+import offerImg1 from "../../../../assets/image/offer-1.jpg";
+import offerImg2 from "../../../../assets/image/offer-2.jpg";
 
 const Offer = () => {
 

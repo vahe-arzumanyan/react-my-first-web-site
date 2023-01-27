@@ -5,9 +5,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 // ************ slider / end ************
-import carouselMen from '../../assets/image/carousel-1.jpg';
-import carouselWomen from '../../assets/image/carousel-2.jpg';
-import carouselKids from '../../assets/image/carousel-3.jpg';
+import carouselMen from '../../../assets/image/carousel-1.jpg';
+import carouselWomen from  '../../../assets/image/carousel-2.jpg';
+import carouselKids from '../../../assets/image/carousel-3.jpg';
 import Carousel from "./carousel";
 import Offer from "./offer";
 import ShippingInfo from "./shipping";

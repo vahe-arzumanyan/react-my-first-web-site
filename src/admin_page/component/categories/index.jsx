@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './style.scss';
-import AdminHeader from "../../../adminPage/component/adminHeader";
-import AddCategories from "./addCategories";
+import AdminHeader from "../admin_header/index";
+import AddCategories from "./addCategories/index";
 
 
 const Categories = () => {
@@ -13,7 +13,7 @@ const Categories = () => {
     }
 
     return  <>
-        <div>
+        <div className='uuu'>
         <AdminHeader name='add-categories'/>
         <button onClick={handleAddCategories}>add categories</button>
 

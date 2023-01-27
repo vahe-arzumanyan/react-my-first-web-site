@@ -3,8 +3,8 @@ import './style.scss';
 import {Route,Routes} from "react-router-dom"
 // ----------------------------------------------------------------
 import Banner from "../navBar";
-import Categories from "../categories";
-import UseFeaturedProduct from "../featured";
+import Categories from "../categories/index";
+import UseFeaturedProduct from "../featured/index";
 
 
 
