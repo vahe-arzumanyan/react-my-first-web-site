@@ -8,10 +8,10 @@ import productImg5 from '../../../assets/image/product/product-5.jpg'
 import productImg6 from '../../../assets/image/product/product-6.jpg'
 import productImg7 from '../../../assets/image/product/product-7.jpg'
 import productImg8 from '../../../assets/image/product/product-8.jpg'
-import AdminHeader from "../admin_header";
+import RightSideBar from "../right_sidebar";
 
 
-const UseFeaturedProduct = () => {
+const Product = () => {
     const [featured, setFeatured] = useState([
         {
             featuredImg: productImg1,
@@ -36,36 +36,15 @@ const UseFeaturedProduct = () => {
             alt: 'img',
             name: 'Goes Here',
             price: '100$'
-        },
-        {
-            featuredImg: productImg5,
-            alt: 'img',
-            name: 'Goes Here',
-            price: '100$'
-        },
-        {
-            featuredImg: productImg6,
-            alt: 'img',
-            name: 'Goes Here',
-            price: '100$'
-        },
-        {
-            featuredImg: productImg7,
-            alt: 'img',
-            name: 'Goes Here',
-            price: '100$'
-        },
-        {
-            featuredImg: productImg8,
-            alt: 'img',
-            name: 'Goes Here',
-            price: '100$'
         }
+
     ])
 
     return <div>
-        <AdminHeader/>
-        <div className='G-flex G-flex-wrap G-justify-between'>
+        <RightSideBar>
+            <button>Add Product</button>
+        </RightSideBar>
+        <div className='G-flex G-flex-wrap'>
             {featured.length ? featured.map((item, index) => {
                 return <div key={index}>
                     <div style={{backgroundImage: `url(${item.featuredImg})`}} alt={item.alt}
@@ -81,4 +60,4 @@ const UseFeaturedProduct = () => {
 
 }
 
-export default UseFeaturedProduct;
+export default Product;

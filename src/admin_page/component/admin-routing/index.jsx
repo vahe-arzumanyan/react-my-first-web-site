@@ -1,29 +1,23 @@
 import React from "react";
 import './style.scss';
-import {Route,Routes} from "react-router-dom"
+import {Route, Routes} from "react-router-dom"
 // ----------------------------------------------------------------
-import Banner from "../navBar";
-import Categories from "../categories/index";
-import UseFeaturedProduct from "../featured/index";
+import SideBar from "../side_bar/index"
+import Categories from "../categories";
+import Product from "../products";
 
 
-
-const AdminPage = ()=>{
+const AdminPage = () => {
     return <div className='G-flex'>
-    <Banner/>
-
-           <div className='G-admin-scrolling'>
-               <Routes>
-                   <Route path={"*"} element={<Categories />}></Route>
-                   <Route path={"categories"} element={<Categories />}></Route>
-                   <Route path={"products"} element={<UseFeaturedProduct />}></Route>
-               </Routes>
-           </div>
-
-
-
-
+        <SideBar/>
+        <div className='G-admin-scrolling'>
+            <Routes>
+                <Route path={"*"} element={<Categories/>}></Route>
+                <Route path={"categories"} element={<Categories/>}></Route>
+                <Route path={"products"} element={<Product/>}></Route>
+            </Routes>
+        </div>
     </div>
 }
 
-export default AdminPage
+export default AdminPage;

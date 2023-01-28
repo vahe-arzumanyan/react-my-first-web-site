@@ -13,7 +13,7 @@ import AdminPage from "./admin_page/component/admin-routing/index";
 
 const App = () => {
     return <div>
-       {/*<div>*/}
+       <div>
        {/*    <Header/>*/}
        {/*    <Routes>*/}
        {/*        <Route path={"/Home"} element={<Home/>}/>*/}
@@ -23,6 +23,7 @@ const App = () => {
        {/*    </Routes>*/}
        {/*</div>*/}
         <AdminPage />
+       </div>
     </div>
 }
 
