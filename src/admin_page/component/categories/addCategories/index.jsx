@@ -1,28 +1,44 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './style.scss'
 import axios from "axios";
+import {useDispatch, useSelector,} from "react-redux";
+import {addCategoriesList} from "../../../../store/combine-reducer/reducers/categories";
 
 const AddCategories = ({onClose}) => {
 
-    const [addCategoriesInfo, setCategoriesInfo] = useState({
-        categoriesName: "",
-        img: null
-    })
 
-    const handleCategoriesName = (e) => {
-        setCategoriesInfo({...addCategoriesInfo, [e.target.name]: e.target.value})
-        // console.log(addCategoriesInfo)
+    // create categories image
+
+    const chooseCategoriesImg = (e) => {
+        const file = e.target.files[0]
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+            setCategoriesInfo({...addCategoriesInfo, img: reader.result})
+        }
     }
 
-    const handleCloseModal = ()=>{
+    useEffect(()=>{
+        console.log(addCategoriesInfo)
+    },[addCategoriesInfo])
+
+    const handleCloseModal = () => {
         onClose()
     }
 
+    // ==================== crud-crud post ====================
     const handleAddInfo = async () => {
-        const result = await axios.post('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo',addCategoriesInfo)
+        const result = await axios.post('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo', addCategoriesInfo)
         console.log(result)
     }
 
+    // ==================== crud-crud get ====================
+    const getCategories = async () => {
+        const result = await axios.get('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo')
+        if (result.data) {
+            dispatch(addCategoriesList(result.data))
+        }
+    }
 
     return <div className='G-container'>
         <div className='P-modal-categories G-flex G-flex-column G-center'>
@@ -34,15 +50,21 @@ const AddCategories = ({onClose}) => {
                        onChange={handleCategoriesName}
                        className='P-categories-input'/>
             </label>
-           <div className='G-flex G-justify-between' style={{width:'150px', margin:'30px 0'}}>
-               <button onClick={handleAddInfo} className='P-btn-categories'>add</button>
-               <button onClick={handleCloseModal} className='P-btn-categories'>close</button>
-           </div>
-            {/*<label>*/}
-            {/*    <p>Choose Image</p>*/}
-            {/*    <input type='file' value='categoriesImg' onChange={handleCategoriesFile}/>*/}
-            {/*</label>*/}
+            <label  className='G-center'>
+                <div className='P-choose-img'>
+                    <p>Choose Image</p>
+                    {addCategoriesInfo.img && <img src={addCategoriesInfo.img} alt="img"/>}
+                    <input onChange={chooseCategoriesImg} type='file'/>
+                </div>
+
+            </label>
+
+            <div className='G-flex G-justify-between' style={{width: '150px', margin: '30px 0'}}>
+                <button onClick={handleAddInfo} className='P-btn-categories'>add</button>
+                <button onClick={handleCloseModal} className='P-btn-categories'>close</button>
+            </div>
         </div>
+
     </div>
 }
 

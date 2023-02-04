@@ -24,3 +24,16 @@
   font-family: monospace;
   color: darkslateblue;
 }
+
+// choose img
+
+.P-choose-img{
+p{
+  margin: 15px 0;
+  cursor: pointer;
+}
+  &
+  input[type=file]{
+    display: none;
+  }
+}
