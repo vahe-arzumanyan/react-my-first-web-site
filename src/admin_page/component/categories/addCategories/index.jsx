@@ -10,7 +10,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         img: null
     })
 
-    // ===================== edit useEffect start =====================
+    // ===================== edit segment start =====================
 
     useEffect(() => {
         if (elementEdit) {
@@ -18,7 +18,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         }
     }, [])
 
-    // ===================== edit useEffect end =====================
+    // ===================== edit segment end =====================
 
     const handleCategoriesName = (e) => {
         setCategoriesInfo({...addCategoriesInfo, [e.target.name]: e.target.value})
