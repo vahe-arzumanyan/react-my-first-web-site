@@ -24,7 +24,6 @@
 
 .uuu{
   width:calc(100% - 300px);
-  width: 100%;
   height:73px;
   background-color: rosybrown;
 }
@@ -34,5 +33,11 @@
   margin: 20px;
   font-family: monospace;
   color:#449fdb;
+}
+
+//
+.categories-container{
+  height: calc(100vh - 73px);
+  overflow: auto;
 }
 

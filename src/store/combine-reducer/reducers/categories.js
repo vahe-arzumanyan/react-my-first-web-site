@@ -8,8 +8,8 @@ const Categories = createSlice({
     name:'categories',
     initialState,
     reducers:{
-addCategoriesList(state, action){
-    state.categoriesList = action.payload;
+  addCategoriesList(state, action){
+     state.categoriesList = action.payload;
 }
     }
 })

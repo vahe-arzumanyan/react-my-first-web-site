@@ -1,13 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss'
 import axios from "axios";
-import {useDispatch, useSelector,} from "react-redux";
-import {addCategoriesList} from "../../../../store/combine-reducer/reducers/categories";
+
 
 const AddCategories = ({onClose}) => {
 
+    const [addCategoriesInfo, setCategoriesInfo] = useState({
+        categoriesName: "",
+        img: null
+    })
 
-    // create categories image
+    const handleCategoriesName = (e) => {
+        setCategoriesInfo({...addCategoriesInfo, [e.target.name]: e.target.value})
+        // console.log(addCategoriesInfo)
+    }
+
 
     const chooseCategoriesImg = (e) => {
         const file = e.target.files[0]
@@ -18,10 +25,6 @@ const AddCategories = ({onClose}) => {
         }
     }
 
-    useEffect(()=>{
-        console.log(addCategoriesInfo)
-    },[addCategoriesInfo])
-
     const handleCloseModal = () => {
         onClose()
     }
@@ -29,16 +32,11 @@ const AddCategories = ({onClose}) => {
     // ==================== crud-crud post ====================
     const handleAddInfo = async () => {
         const result = await axios.post('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo', addCategoriesInfo)
-        console.log(result)
+        console.log(result.data)
     }
 
     // ==================== crud-crud get ====================
-    const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo')
-        if (result.data) {
-            dispatch(addCategoriesList(result.data))
-        }
-    }
+
 
     return <div className='G-container'>
         <div className='P-modal-categories G-flex G-flex-column G-center'>

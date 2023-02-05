@@ -1,18 +1,14 @@
 import React, {useState} from "react";
 import './style.scss';
-import {addCategoriesList} from '../../../../store/combine-reducer/reducers/categories'
-import AddCategories from "../addCategories";
-import {useDispatch, useSelector} from "react-redux";
-
-const GetCategoriesAdmin = ({item, index, getCategories}) => {
 
 
+const GetCategoriesAdmin = ({element, indexm, getCategories}) => {
 
 
-
-    return <div key={index}>
-        <div>
-            <p>{item.categoriesName}</p>
+    return <div className='ppp'>
+        <div className='P-categorises-content'>
+            <div style={{backgroundImage:`url(${element.img})`}} className='G-image-contain P-categories-img'></div>
+            <p>{element.categoriesName}</p>
         </div>
     </div>
 }
