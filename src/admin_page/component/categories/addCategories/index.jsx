@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss'
 import axios from "axios";
+import {useDispatch, useSelector} from "react-redux";
+import {addCategoriesList} from "../../../../store/combine-reducer/reducers/categories";
 
 
 const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) => {
-
+    const categoriesList = useSelector(state => state.Categories.categoriesList)
+    const dispatch = useDispatch();
     const [addCategoriesInfo, setCategoriesInfo] = useState({
         categoriesName: "",
         img: null
@@ -17,6 +20,26 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
             setCategoriesInfo(elementEdit)
         }
     }, [])
+
+
+    const editData = async (id)=>{
+        const editBody = addCategoriesInfo
+delete editBody._id
+        const editResult = await axios.put(`https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo/${id}`, editBody)
+    if(editResult){
+        getCategories()
+
+    }
+    }
+
+    const getCategories = async () => {
+        const result = await axios.get('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo')
+        if (result.data) {
+            dispatch(addCategoriesList(result.data))
+            console.log(result.data)
+
+        }
+    }
 
     // ===================== edit segment end =====================
 
