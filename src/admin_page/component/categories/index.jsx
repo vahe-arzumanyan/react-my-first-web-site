@@ -32,7 +32,7 @@ const Categories = () => {
             <ButtonAddCategories  />
         </RightSideBar>
 
-        <div className="G-flex G-flex-wrap categories-container">
+        <div className="G-flex G-center G-flex-wrap P-categories-container">
             {categoriesList.length ? categoriesList.map((element,index)=>{
                 return <GetCategoriesAdmin
                     key={index}
