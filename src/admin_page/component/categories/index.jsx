@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import './style.scss';
 import RightSideBar from "../right_sidebar";
 import {useDispatch, useSelector,} from "react-redux";
@@ -29,17 +29,17 @@ const Categories = () => {
 
     return <>
         <RightSideBar name='add-categories'>
-            <ButtonAddCategories  />
+            <ButtonAddCategories/>
         </RightSideBar>
 
         <div className="G-flex G-center G-flex-wrap P-categories-container">
-            {categoriesList.length ? categoriesList.map((element,index)=>{
+            {categoriesList.length ? categoriesList.map((element, index) => {
                 return <GetCategoriesAdmin
                     key={index}
-                element={element}
+                    element={element}
                     getCategories={getCategories}
                 />
-            }): null}
+            }) : null}
         </div>
     </>
 }

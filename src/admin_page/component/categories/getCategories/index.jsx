@@ -1,15 +1,15 @@
-import React, {useState} from "react";
+import React from "react";
 import './style.scss';
 
 
 const GetCategoriesAdmin = ({element, indexm, getCategories}) => {
 
 
-    return <div className='ppp'>
-        <div className='P-categorises-content'>
-            <div style={{backgroundImage:`url(${element.img})`}} className='G-image-contain P-categories-img'></div>
-            <p>{element.categoriesName}</p>
-        </div>
+    return <div className='P-categorises-content'>
+        <div className='G-flex-column G-center P-categories-element'>
+            <div style={{backgroundImage: `url(${element.img})`}} className='G-image-contain P-categories-img'></div>
+            <p className='P-categories-name'>{element.categoriesName}</p></div>
+
     </div>
 }
 
