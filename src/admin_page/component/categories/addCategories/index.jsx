@@ -3,12 +3,22 @@ import './style.scss'
 import axios from "axios";
 
 
-const AddCategories = ({onClose}) => {
+const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) => {
 
     const [addCategoriesInfo, setCategoriesInfo] = useState({
         categoriesName: "",
         img: null
     })
+
+    // ===================== edit useEffect start =====================
+
+    useEffect(() => {
+        if (elementEdit) {
+            setCategoriesInfo(elementEdit)
+        }
+    }, [])
+
+    // ===================== edit useEffect end =====================
 
     const handleCategoriesName = (e) => {
         setCategoriesInfo({...addCategoriesInfo, [e.target.name]: e.target.value})
@@ -48,7 +58,7 @@ const AddCategories = ({onClose}) => {
                        onChange={handleCategoriesName}
                        className='P-categories-input'/>
             </label>
-            <label  className='G-center'>
+            <label className='G-center'>
                 <div className='P-choose-img'>
                     <p>Choose Image</p>
                     {addCategoriesInfo.img && <img src={addCategoriesInfo.img} alt="img"/>}
