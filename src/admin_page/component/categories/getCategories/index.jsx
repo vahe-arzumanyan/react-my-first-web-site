@@ -2,18 +2,18 @@ import React, {useState} from "react";
 import './style.scss';
 import CustomModal from "../../../castum-modal";
 import AddCategories from "../addCategories";
-
+import DeleteCategories from "../delete-categories";
 
 const GetCategoriesAdmin = ({element, index, getCategories}) => {
 
     const [categoriesEditModal, setCategoriesEditModal] = useState(false)
     const [categoriesDeleteModal, setCategoriesDeleteModal] = useState(false)
 
-    const handleCategoriesEditModal = () =>{
+    const handleCategoriesEditModal = () => {
         setCategoriesEditModal(!categoriesEditModal)
     }
 
-    const handleCategoriesDeleteModal = () =>{
+    const handleCategoriesDeleteModal = () => {
         setCategoriesDeleteModal(!categoriesDeleteModal)
     }
 
@@ -26,10 +26,16 @@ const GetCategoriesAdmin = ({element, index, getCategories}) => {
             </div>
             <div style={{backgroundImage: `url(${element.img})`}} className='G-image-contain P-categories-img'></div>
             <p className='P-categories-name'>{element.categoriesName}</p></div>
-        { categoriesEditModal ? <CustomModal deleteModal={handleCategoriesEditModal}>
-<AddCategories elementEdit={element} elementIndex={index} categoriesEditBtn={handleCategoriesEditModal} />
-        </CustomModal> : null }
+        {categoriesEditModal ? <CustomModal EditModal={handleCategoriesEditModal}>
+            <AddCategories elementEdit={element} elementIndex={index} categoriesEditBtn={handleCategoriesEditModal}/>
+        </CustomModal> : null}
+        {categoriesDeleteModal ? <CustomModal deleteModal={handleDeltelteCategoriesModal}>
+            <DeleteCategories item={item}
+                              index={index}
+                              onClonse={onClose}/>
+        </CustomModal> : null}
     </div>
 }
 
 export default GetCategoriesAdmin;
+

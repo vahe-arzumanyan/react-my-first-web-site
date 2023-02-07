@@ -9,6 +9,7 @@ import productImg6 from '../../../assets/image/product/product-6.jpg'
 import productImg7 from '../../../assets/image/product/product-7.jpg'
 import productImg8 from '../../../assets/image/product/product-8.jpg'
 import RightSideBar from "../right_sidebar";
+import CustomAddBtn from "../categories/button-categories";
 
 
 const Product = () => {
@@ -42,7 +43,7 @@ const Product = () => {
 
     return <div>
         <RightSideBar>
-            <button>Add Product</button>
+            <CustomAddBtn name="Add Products" />
         </RightSideBar>
         <div className='G-flex G-flex-wrap'>
             {featured.length ? featured.map((item, index) => {

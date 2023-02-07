@@ -6,7 +6,7 @@ import axios from "axios";
 import {addCategoriesList} from "../../../store/combine-reducer/reducers/categories";
 import {editCategories} from "../../../store/combine-reducer/reducers/categories";
 import GetCategoriesAdmin from "./getCategories";
-import ButtonAddCategories from "./button-categories";
+import CustomAddBtn from "./button-categories";
 
 
 const Categories = () => {
@@ -30,7 +30,7 @@ const Categories = () => {
 
     return <>
         <RightSideBar name='add-categories'>
-            <ButtonAddCategories/>
+            <CustomAddBtn name="Add Categories"/>
         </RightSideBar>
 
         <div className="G-flex G-center G-flex-wrap P-categories-container">

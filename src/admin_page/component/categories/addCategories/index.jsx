@@ -22,15 +22,15 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     }, [])
 
 
-    const editData = async (id)=>{
+    const editData = async (id) => {
         const editBody = addCategoriesInfo
-delete editBody._id
-        const editResult = await axios.put(`https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo/${id}`, editBody)
-    if(editResult){
-        getCategories()
-        console.log(editData(id))
+        delete editBody._id
+        const editResult = await axios.put(`https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo/${id}`, addCategoriesInfo)
+        if (editResult) {
+            getCategories()
+            console.log(editData(id))
 
-    }
+        }
     }
 
     const getCategories = async () => {
@@ -38,10 +38,18 @@ delete editBody._id
         if (result.data) {
             dispatch(addCategoriesList(result.data))
             console.log(result.data)
-
         }
     }
 
+
+
+    // const postCategories = async () => {
+    //     const result = await axios.post('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo', addCategoriesInfo)
+    //     if (result.data) {
+    //         await getCategories()
+    //         onClose()
+    //     }
+    // }
     // ===================== edit segment end =====================
 
     const handleCategoriesName = (e) => {
@@ -66,7 +74,9 @@ delete editBody._id
     // ==================== crud-crud post ====================
     const handleAddInfo = async () => {
         const result = await axios.post('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo', addCategoriesInfo)
-        console.log(result.data)
+        if(editData){
+            editData(elementEdit ._id);
+        }
     }
 
     // ==================== crud-crud get ====================

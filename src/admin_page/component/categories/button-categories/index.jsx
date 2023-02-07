@@ -5,7 +5,7 @@ import GetCategoriesAdmin from "../getCategories";
 // =========================
 
 
-const ButtonAddCategories = () => {
+const CustomAddBtn = ({name}) => {
 
     // const [categoriesList, setCategoriesList] = useState(false)
 
@@ -17,9 +17,10 @@ const ButtonAddCategories = () => {
     }
 
     return <div>
-        <button onClick={handleAddCategories} className='P-add-categories'>add categories</button>
+        <button onClick={handleAddCategories} className='P-add-categories'>{name}</button>
         {btnCategories ? <AddCategories onClose={handleAddCategories}/> : null}
+
     </div>
 }
 
-export default ButtonAddCategories;
+export default CustomAddBtn;

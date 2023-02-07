@@ -1,30 +1,30 @@
-.P-modal-categories{
+.P-modal-categories {
   width: 300px;
   height: 500px;
-  border:2px solid #4c4b4b;
+  border: 2px solid #4c4b4b;
   background-color: #758897;
   position: fixed;
-top:10%;
+  top: 10%;
   left: 50%;
   z-index: 1;
 }
 
-.P-categories-input-name{
+.P-categories-input-name {
   font-size: 18px;
   color: black;
   font-family: monospace;
-  margin:15px 0;
+  margin: 15px 0;
 }
 
-.P-categories-input{
+.P-categories-input {
   width: 200px;
   height: 30px;
   border: 1px solid darkslateblue;
 }
 
-// botton
+// button
 
-.P-btn-categories{
+.P-btn-categories {
   font-size: 16px;
   font-family: monospace;
   color: darkslateblue;
@@ -32,13 +32,14 @@ top:10%;
 
 // choose img
 
-.P-choose-img{
-p{
-  margin: 15px 0;
-  cursor: pointer;
-}
+.P-choose-img {
+  p {
+    margin: 15px 0;
+    cursor: pointer;
+  }
+
   &
-  input[type=file]{
+  input[type=file] {
     display: none;
   }
 }
