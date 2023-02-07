@@ -17,7 +17,7 @@ const ButtonAddCategories = () => {
     }
 
     return <div>
-        <button onClick={handleAddCategories} style={{margin: '20px'}}>add categories</button>
+        <button onClick={handleAddCategories} className='P-add-categories'>add categories</button>
         {btnCategories ? <AddCategories onClose={handleAddCategories}/> : null}
     </div>
 }

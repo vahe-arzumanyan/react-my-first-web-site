@@ -28,6 +28,7 @@ delete editBody._id
         const editResult = await axios.put(`https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo/${id}`, editBody)
     if(editResult){
         getCategories()
+        console.log(editData(id))
 
     }
     }

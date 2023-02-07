@@ -4,6 +4,7 @@ import RightSideBar from "../right_sidebar";
 import {useDispatch, useSelector,} from "react-redux";
 import axios from "axios";
 import {addCategoriesList} from "../../../store/combine-reducer/reducers/categories";
+import {editCategories} from "../../../store/combine-reducer/reducers/categories";
 import GetCategoriesAdmin from "./getCategories";
 import ButtonAddCategories from "./button-categories";
 
