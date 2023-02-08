@@ -4,6 +4,7 @@ import CustomModal from "../../../castum-modal";
 import AddCategories from "../addCategories";
 import DeleteCategories from "../delete-categories";
 
+
 const GetCategoriesAdmin = ({element, index, getCategories}) => {
 
     const [categoriesEditModal, setCategoriesEditModal] = useState(false)
@@ -29,7 +30,7 @@ const GetCategoriesAdmin = ({element, index, getCategories}) => {
         {categoriesEditModal ? <CustomModal EditModal={handleCategoriesEditModal}>
             <AddCategories elementEdit={element} elementIndex={index} categoriesEditBtn={handleCategoriesEditModal}/>
         </CustomModal> : null}
-        {categoriesDeleteModal ? <CustomModal deleteModal={handleDeltelteCategoriesModal}>
+        {categoriesDeleteModal ? <CustomModal deleteModal={handleCategoriesDeleteModal}>
             <DeleteCategories item={item}
                               index={index}
                               onClonse={onClose}/>
