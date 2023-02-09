@@ -1,9 +1,70 @@
-.P-footer{
-  background-color: #3D464D;
+.P-footer-contact {
+  max-width: 400px;
+  width: 100%;
 }
 
-.P-footer-infor-title{
+.P-footer {
+  background-color: #3D464D;
+  margin: 30px 0 0 0;
+  padding: 30px 0;
+}
+
+// Footer / Contact Information
+
+.P-footer-info-title {
   font-size: 18px;
   font-family: monospace;
   color: white;
+}
+
+.P-footer-info-description {
+  font-size: 16px;
+  font-family: cursive;
+  color: white;
+  margin: 10px 0;
+}
+
+.P-footer-info-address p {
+  font-size: 16px;
+  font-family: "Nirmala UI";
+  color: white;
+}
+
+// ========================================
+
+// Footer / Quick SHop
+
+.P-footer-quick-shop ul li {
+  font-size: 16px;
+  font-family: SansSerif;
+  color: white;
+  margin: 5px 0;
+}
+.P-footer-quick-shop p {
+    font-size: 18px;
+    font-family: SansSerif;
+    color: white;
+}
+
+.P-footer-quick-shop ul {
+  margin: 10px 0;
+}
+
+// Footer  / My Account
+
+
+.P-footer-my-account ul li {
+  font-size: 16px;
+  font-family: SansSerif;
+  color: white;
+  margin: 5px 0;
+}
+.P-footer-my-account p {
+  font-size: 18px;
+  font-family: SansSerif;
+  color: white;
+}
+
+.P-footer-my-account ul {
+  margin: 10px 0;
 }
