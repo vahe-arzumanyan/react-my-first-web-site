@@ -11,6 +11,7 @@ import carouselKids from '../../../assets/image/carousel-3.jpg';
 import Carousel from "./carousel";
 import Offer from "./offer";
 import ShippingInfo from "./shipping";
+import Footer from "../../component/footer/index"
 
 
 
@@ -114,7 +115,7 @@ const Home = () => {
             </div>
             {/*<UseFeaturedProduct/>*/}
         </div>
-
+<Footer />
 
     </>
 }
