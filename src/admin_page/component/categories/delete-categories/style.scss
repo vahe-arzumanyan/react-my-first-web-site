@@ -2,5 +2,15 @@
   width: 350px;
   height: 150px;
   border: 1px solid black;
-  background-color: #758897;
+  background-color: #1d70b1;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.P-question-delete{
+  font-size: 18px;
+  font-family: cursive;
+  color: #e74c3c;
 }

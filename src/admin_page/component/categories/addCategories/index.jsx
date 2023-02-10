@@ -3,7 +3,6 @@ import './style.scss'
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {addCategoriesList} from "../../../../store/combine-reducer/reducers/categories";
-import img from '../../../../assets/image/product/product-1.jpg';
 
 
 const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) => {
@@ -11,7 +10,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     const dispatch = useDispatch();
     const [addCategoriesInfo, setCategoriesInfo] = useState({
         categoriesName: "",
-        img: img
+        categoriesImg: null
     })
 
     // ===================== edit segment start =====================
@@ -23,10 +22,11 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     }, [])
 
 
+
     const editData = async (id) => {
         const editBody = addCategoriesInfo
         delete editBody._id
-        const editResult = await axios.put(`https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo/${id}`, addCategoriesInfo)
+        const editResult = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo/${id}`, addCategoriesInfo)
         if (editResult) {
             getCategories()
             console.log(editData(id))
@@ -35,7 +35,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     }
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo')
+        const result = await axios.get('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo')
         if (result.data) {
             dispatch(addCategoriesList(result.data))
             console.log(result.data)
@@ -45,7 +45,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
 
     const postCategories = async () => {
-        const result = await axios.post('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo', addCategoriesInfo)
+        const result = await axios.post('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo', addCategoriesInfo)
         if (result.data) {
             await getCategories()
             onClose()
@@ -74,7 +74,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
     // ==================== crud-crud post ====================
     const handleAddInfo = async () => {
-        const result = await axios.post('https://crudcrud.com/api/b76e3217f8604a86b57ef256676003df/addCategoriesInfo', addCategoriesInfo)
+        const result = await axios.post('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo', addCategoriesInfo)
         if(editData){
             editData(elementEdit ._id);
         }
