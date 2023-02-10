@@ -1,12 +1,16 @@
 import React from "react";
 import './style.scss'
 import {NavLink} from "react-router-dom";
+import {useState} from "react";
+import Login from "../login";
 
 
 const Header = () => {
 
-    const handleOpenLoginModal = () => {
+    const [login, setLogin] = useState(false);
 
+    const handleOpenLoginModal = () => {
+setLogin(!login)
     }
 
     return <div className='P-header G-flex G-align-center'>
@@ -35,8 +39,14 @@ const Header = () => {
                             <span className='icon-basket'></span>
                             <div className='P-product-like G-center'><p>0</p></div>
                         </div>
-                        <button onClick={handleOpenLoginModal} className='icon-login-btn'><span
-                            className='icon-login'></span></button>
+
+                        {/* ============================= Login ============================= */}
+<div>
+                        {login ? <Login /> : null}
+</div>
+                        <button onClick={handleOpenLoginModal} className='icon-login-btn'>
+                            <span className='icon-login'></span></button>
+
                     </div>
                 </ul>
             </div>
