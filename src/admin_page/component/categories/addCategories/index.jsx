@@ -26,12 +26,9 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     const editData = async (id) => {
         const editBody = addCategoriesInfo
         delete editBody._id
-        const editResult = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo/${id}`, addCategoriesInfo)
-        if (editResult) {
+        await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo/${id}`, addCategoriesInfo)
             getCategories()
             console.log(editData(id))
-
-        }
     }
 
     const getCategories = async () => {
@@ -64,7 +61,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         const reader = new FileReader()
         reader.readAsDataURL(file)
         reader.onloadend = () => {
-            setCategoriesInfo({...addCategoriesInfo, img: reader.result})
+            setCategoriesInfo({...addCategoriesInfo, categoriesImg: reader.result})
         }
     }
 
@@ -75,12 +72,15 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     // ==================== crud-crud post ====================
     const handleAddInfo = async () => {
         const result = await axios.post('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo', addCategoriesInfo)
+        await getCategories()
+        onClose()
+
         if(editData){
-            editData(elementEdit ._id);
+            postCategories(elementEdit ._id);
         }
     }
 
-    // ==================== crud-crud get ====================
+
 
 
     return <div className='G-container'>
@@ -96,7 +96,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
             <label className='G-center'>
                 <div className='P-choose-img'>
                     <p>Choose Image</p>
-                    {addCategoriesInfo.img && <img src={addCategoriesInfo.img} alt="img"/>}
+                    {addCategoriesInfo.categoriesImg && <img src={addCategoriesInfo.categoriesImg} alt="img"/>}
                     <input onChange={chooseCategoriesImg} type='file'/>
                 </div>
 

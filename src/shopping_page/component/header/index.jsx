@@ -10,7 +10,7 @@ const Header = () => {
     const [login, setLogin] = useState(false);
 
     const handleOpenLoginModal = () => {
-setLogin(!login)
+        setLogin(!login)
     }
 
     return <div className='P-header G-flex G-align-center'>
@@ -41,9 +41,9 @@ setLogin(!login)
                         </div>
 
                         {/* ============================= Login ============================= */}
-<div>
-                        {login ? <Login /> : null}
-</div>
+                        <div>
+                            {login ? <Login/> : null}
+                        </div>
                         <button onClick={handleOpenLoginModal} className='icon-login-btn'>
                             <span className='icon-login'></span></button>
 

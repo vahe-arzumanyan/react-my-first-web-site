@@ -19,7 +19,6 @@ const Categories = () => {
         if (result.data) {
             dispatch(addCategoriesList(result.data))
             console.log(result.data)
-
         }
     }
 
@@ -34,10 +33,10 @@ const Categories = () => {
         </RightSideBar>
 
         <div className="G-flex G-center G-flex-wrap P-categories-container">
-            {categoriesList.length ? categoriesList.map((element, index) => {
+            {categoriesList.length ? categoriesList.map((getElement, index) => {
                 return <GetCategoriesAdmin
                     key={index}
-                    element={element}
+                    getElement={getElement}
                     getCategories={getCategories}
                 />
             }) : <div className='G-flex'>
