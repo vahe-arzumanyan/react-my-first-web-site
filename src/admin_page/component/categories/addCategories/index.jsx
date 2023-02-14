@@ -16,6 +16,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     // ===================== edit segment start =====================
 
     useEffect(() => {
+        console.log(elementEdit)
         if (elementEdit) {
             setCategoriesInfo(elementEdit)
         }
@@ -24,11 +25,10 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
 
     const editData = async (id) => {
-        const editBody = addCategoriesInfo
-        delete editBody._id
-        await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo/${id}`, addCategoriesInfo)
+        const body = addCategoriesInfo
+        delete body._id
+        await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo/${id}`, body)
             getCategories()
-            console.log(editData(id))
     }
 
     const getCategories = async () => {
@@ -71,12 +71,13 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
     // ==================== crud-crud post ====================
     const handleAddInfo = async () => {
-        const result = await axios.post('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo', addCategoriesInfo)
+        postCategories()
+        // const result = await axios.post('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo', addCategoriesInfo)
         await getCategories()
         onClose()
 
-        if(editData){
-            postCategories(elementEdit ._id);
+        if(elementEdit){
+            editData(elementEdit._id);
         }
     }
 
@@ -110,5 +111,5 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
     </div>
 }
-
+//asa
 export default AddCategories;

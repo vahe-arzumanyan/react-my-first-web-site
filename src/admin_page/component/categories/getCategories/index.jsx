@@ -36,7 +36,7 @@ const GetCategoriesAdmin = ({getElement, index, onCLose}) => {
         {/*    <AddCategories elementEdit={getElement} elementIndex={index} categoriesEditBtn={handleCategoriesEditModal}/>*/}
         {/*</CustomModal> : null}*/}
 
-        {categoriesEditModal ? <AddCategories
+        {categoriesEditModal ? <AddCategories onClose={handleCategoriesEditModal}
             elementEdit={getElement}
             elementIndex={index}
             categoriesEditBtn={handleCategoriesEditModal}/> : null}
