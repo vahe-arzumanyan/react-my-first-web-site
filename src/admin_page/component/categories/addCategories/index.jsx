@@ -70,9 +70,9 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     }
 
     // ==================== crud-crud post ====================
+
     const handleAddInfo = async () => {
         postCategories()
-        // const result = await axios.post('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo', addCategoriesInfo)
         await getCategories()
         onClose()
 
@@ -95,15 +95,15 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
                        className='P-categories-input'/>
             </label>
             <label className='G-center'>
-                <div className='P-choose-img'>
-                    <p>Choose Image</p>
+                <div className='P-choose-img G-flex-column G-center'>
+                    <p className='P-choose-img-categories'>choose image</p>
                     {addCategoriesInfo.categoriesImg && <img src={addCategoriesInfo.categoriesImg} alt="img"/>}
                     <input onChange={chooseCategoriesImg} type='file'/>
                 </div>
 
             </label>
 
-            <div className='G-flex G-justify-between' style={{width: '150px', margin: '30px 0'}}>
+            <div className='G-flex G-justify-between P-add-categories-content'>
                 <button onClick={handleAddInfo} className='P-btn-categories'>add</button>
                 <button onClick={handleCloseModal} className='P-btn-categories'>close</button>
             </div>

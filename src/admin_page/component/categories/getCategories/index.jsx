@@ -32,9 +32,6 @@ const GetCategoriesAdmin = ({getElement, index, onCLose}) => {
 
         {/* ========================== categories edit ========================== */}
 
-        {/*{categoriesEditModal ? <CustomModal EditModal={handleCategoriesEditModal}>*/}
-        {/*    <AddCategories elementEdit={getElement} elementIndex={index} categoriesEditBtn={handleCategoriesEditModal}/>*/}
-        {/*</CustomModal> : null}*/}
 
         {categoriesEditModal ? <AddCategories onClose={handleCategoriesEditModal}
             elementEdit={getElement}
