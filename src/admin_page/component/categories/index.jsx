@@ -7,6 +7,7 @@ import {addCategoriesList} from "../../../store/combine-reducer/reducers/categor
 import {editCategories} from "../../../store/combine-reducer/reducers/categories";
 import GetCategoriesAdmin from "./getCategories";
 import CustomAddBtn from "./button-categories";
+import Loading from "../loading";
 
 
 const Categories = () => {
@@ -39,15 +40,7 @@ const Categories = () => {
                     getElement={getElement}
                     getCategories={getCategories}
                 />
-            }) : <div className='G-flex'>
-                <p className='P-loading-title'>Loading </p>
-                <div className="lds-ellipsis">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
+            }) : <Loading />
             }
         </div>
     </>
