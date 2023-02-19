@@ -22,10 +22,10 @@ const CustomAddBtn = ({name}) => {
     }
 
     const handleAdd = () => {
-        if (name = "Add Categories") {
+        if (name === "Add Categories") {
             handleAddCategories()
         }
-        if (name = "Add Products") {
+        if (name === "Add Products") {
             handleAddProducts()
         }
     }

@@ -13,6 +13,8 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         categoriesImg: null
     })
 
+
+
     // ===================== edit segment start =====================
 
     useEffect(() => {
@@ -84,7 +86,8 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
 
 
-    return <div className='G-container'>
+    return <div className='P-add-categories-modal G-center'>
+        <div className='P-add-categories-modal-bgColor '></div>
         <div className='P-modal-categories G-flex G-flex-column G-center'>
             <label className='G-flex G-flex-column G-center'>
                 <p className='P-categories-input-name'>Categories Name</p>
@@ -97,15 +100,17 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
             <label className='G-center'>
                 <div className='P-choose-img G-flex-column G-center'>
                     <p className='P-choose-img-categories'>choose image</p>
+                    <div className='G-choose-img'>
                     {addCategoriesInfo.categoriesImg && <img src={addCategoriesInfo.categoriesImg} alt="img"/>}
-                    <input onChange={chooseCategoriesImg} type='file'/>
+                    <input onChange={chooseCategoriesImg} type='file' />
+                    </div>
                 </div>
 
             </label>
 
             <div className='G-flex G-justify-between P-add-categories-content'>
-                <button onClick={handleAddInfo} className='P-btn-categories'>add</button>
-                <button onClick={handleCloseModal} className='P-btn-categories'>close</button>
+                <button onClick={handleAddInfo}>add</button>
+                <button onClick={handleCloseModal}>close</button>
             </div>
         </div>
 
