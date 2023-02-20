@@ -14,7 +14,7 @@ const Categories = createSlice({
         editCategories(state, action) {
             const categoriesEdit = state.categoriesList.map((item, index) => {
                 if (index === action.payload.elementIndex) {
-                    item = action.payload.categoriesEdit
+                    item = action.payload
                 }
                 return item;
             })

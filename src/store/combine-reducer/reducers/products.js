@@ -17,9 +17,17 @@ const Products = createSlice({
                     state.productList.splice((index, 1))
                 }
             })
-        }
+        },
+
+        pushProduct(state, action){
+            state.categoriesList.map((element, i)=>{
+                if(element.productsName === action.payload.categoriesName){
+                    element.productList.push(action.payload.product)
+                }
+            })
+        },
     }
 })
 
-export const {addProducts, deleteProducts} = Products.actions
+export const {addProducts, deleteProducts, pushProduct} = Products.actions
 export default Products.reducer;

@@ -15,15 +15,15 @@ const Products = () => {
     const products = useSelector(state => state.Products.productList)
     const dispatch = useDispatch();
 
-    const getProducts = async () => {
-        const result = await axios.get("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/products")
+    const getProductsServer = async () => {
+        const result = await axios.get("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo")
         if (result.data) {
             dispatch(addProducts(result.data))
         }
     }
 
     useEffect(() => {
-        getProducts()
+        getProductsServer()
     }, [])
 
 
@@ -45,12 +45,4 @@ const Products = () => {
 
 export default Products;
 
-// const [productsInfo, setProductsInfo] = useState([
-//     {
-//         productImg: null,
-//         alt: 'img',
-//         productName: '',
-//         productPrice: 0,
-//         productCategories:''
-//     }
-// ])
+
