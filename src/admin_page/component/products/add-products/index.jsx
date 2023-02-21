@@ -7,7 +7,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {pushProduct} from "../../../../store/combine-reducer/reducers/products";
 
 
-
 const AddProducts = ({productsItem, index, onClose}) => {
     const categoriesList = useSelector(state => state.Categories.categoriesList)
     const productList = useSelector(state => state.Products.productList)
@@ -17,7 +16,7 @@ const AddProducts = ({productsItem, index, onClose}) => {
         productsName: '',
         productsDescription: '',
         productsImg: null,
-        productsPrise: 0,
+        productsPrise: '',
         categories: ''
     })
 
@@ -27,23 +26,20 @@ const AddProducts = ({productsItem, index, onClose}) => {
         onClose()
     }
 
+    // make empty input field
+
     const handleAddProducts = async () => {
         if (productsItem) {
             addProductsServer()
-            onClose()
-
         }
-        console.log(addProductsServer)
-        console.log('barev')
-        setAddProductsInfo({
-            ...addProductsInfo,
+
+        setAddProductsInfo({...addProductsInfo,
             productsName: '',
             productsDescription: '',
-            productsPrise: 0,
             productsImg: null,
+            productsPrise: '',
             categories: ''
         })
-
     }
 
     //  ============================ add product img ============================
@@ -69,7 +65,15 @@ const AddProducts = ({productsItem, index, onClose}) => {
                 }
             })
     }
-    // ============================ axios get put post ============================
+
+    // ============================ input changes ============================
+
+    const handleProductChange = (e) => {
+        setAddProductsInfo({...addProductsInfo, [e.target.name]: e.target.value})
+        // setErrorText({...setErrorText, [e.target.name]: ''})
+    }
+
+    // *********************** AXIOS **********************
 
     const addProductsServer = async () => {
         const result = await axios.post("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo", addProductsInfo)
@@ -94,6 +98,9 @@ const AddProducts = ({productsItem, index, onClose}) => {
             <div className='G-flex-column G-center'>
                 <label>
                     <div className='P-choose-img G-flex-column G-center'>
+
+                        {/* img input field*/}
+
                         <p className='P-choose-img-categories'>choose image</p>
                         <div className='G-choose-img'>
                             {addProductsInfo.productsImg && <img src={addProductsInfo.productsImg}/>}
@@ -104,20 +111,28 @@ const AddProducts = ({productsItem, index, onClose}) => {
                 <div className='P-products-info G-flex-column G-center'>
                     <label>
                         <p>product name</p>
-                        <input type='text'/>
+                        <input type='text'
+                               onChange={handleProductChange}
+                               name='name'
+                               value={addProductsInfo.productsName}/>
                     </label>
                     <label>
                         <p>product description</p>
-                        <input type='text'/>
+                        <input type='text'
+                               onChange={handleProductChange}
+                               name='description'
+                               value={addProductsInfo.productsDescription}
+                        />
                     </label>
                     <label>
                         <p>product price</p>
-                        <input type='number'/>
+                        <input type='number'
+                               onChange={handleProductChange}
+                               name='price'
+                               value={addProductsInfo.productsPrise}
+                        />
                     </label>
-                    <label>
-                        <p>product categories</p>
-                        <input type='text'/>
-                    </label>
+
                 </div>
 
                 {/* categories select */}
