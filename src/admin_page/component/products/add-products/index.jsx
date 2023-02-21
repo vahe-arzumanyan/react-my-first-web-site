@@ -29,11 +29,12 @@ const AddProducts = ({productsItem, index, onClose}) => {
     // make empty input field
 
     const handleAddProducts = async () => {
-        if (productsItem) {
-            addProductsServer()
-        }
+        await addProductsServer()
 
-        setAddProductsInfo({...addProductsInfo,
+        // make input field empty
+
+        setAddProductsInfo({
+            ...addProductsInfo,
             productsName: '',
             productsDescription: '',
             productsImg: null,
@@ -55,15 +56,18 @@ const AddProducts = ({productsItem, index, onClose}) => {
     // ============================ select changes ============================
 
     const handleSelectChange = (e) => {
+
         if (e.target.value || e.target.value === 0)
-            categoriesList.for((item, index) => {
+            categoriesList.map((item, index) => {
                 if (index === +e.target.value) {
-                    productList.Categories = item.name
+                    addProductsInfo.categories = item.categoriesName
                 }
                 if (item.categoriesName === productList.categories) {
                     dispatch(pushProduct({productList: item, categoriesName: item.categoriesName}))
                 }
             })
+
+
     }
 
     // ============================ input changes ============================
@@ -79,7 +83,6 @@ const AddProducts = ({productsItem, index, onClose}) => {
         const result = await axios.post("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo", addProductsInfo)
         if (result.data) {
             await getProductsServer()
-            onClose()
         }
     }
 
@@ -87,7 +90,6 @@ const AddProducts = ({productsItem, index, onClose}) => {
         const result = await axios.get("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo")
         if (result.data) {
             dispatch(addProducts(result.data))
-            console.log(result.data)
         }
     }
 
@@ -113,14 +115,14 @@ const AddProducts = ({productsItem, index, onClose}) => {
                         <p>product name</p>
                         <input type='text'
                                onChange={handleProductChange}
-                               name='name'
+                               name='productsName'
                                value={addProductsInfo.productsName}/>
                     </label>
                     <label>
                         <p>product description</p>
                         <input type='text'
                                onChange={handleProductChange}
-                               name='description'
+                               name='productsDescription'
                                value={addProductsInfo.productsDescription}
                         />
                     </label>
@@ -128,7 +130,7 @@ const AddProducts = ({productsItem, index, onClose}) => {
                         <p>product price</p>
                         <input type='number'
                                onChange={handleProductChange}
-                               name='price'
+                               name='productsPrise'
                                value={addProductsInfo.productsPrise}
                         />
                     </label>
@@ -139,10 +141,9 @@ const AddProducts = ({productsItem, index, onClose}) => {
                 <div className='G-flex-column G-center P-product-select'>
                     <p>choose categories</p>
                     <select onChange={handleSelectChange}>
-                        <option>select categories</option>
-
+                        <option value="">select categories</option>
                         {categoriesList.length ? categoriesList.map((item, index) => {
-                            return <option key={index}>
+                            return <option value={index} key={index}>
                                 {item.categoriesName}</option>
                         }) : null}
 

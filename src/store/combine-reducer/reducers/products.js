@@ -18,14 +18,13 @@ const Products = createSlice({
                 }
             })
         },
-
-        pushProduct(state, action){
-            state.categoriesList.map((element, i)=>{
-                if(element.productsName === action.payload.categoriesName){
-                    element.productList.push(action.payload.product)
-                }
-            })
-        },
+        // pushProduct(state, action){
+        //     state.categoriesList.map((element, i)=>{
+        //         if(element.productsName === action.payload.categoriesName){
+        //             element.productList.push(action.payload.product)
+        //         }
+        //     })
+        // },
     }
 })
 

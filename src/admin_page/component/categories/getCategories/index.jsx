@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import './style.scss';
-import CustomModal from "../../../castum-modal";
 import AddCategories from "../addCategories";
-import DeleteCategories from "../delete-categories";
+import DeleteCustomModal from "../delete-categories";
 
 
 const GetCategoriesAdmin = ({getElement, index, onCLose}) => {
@@ -16,7 +15,6 @@ const GetCategoriesAdmin = ({getElement, index, onCLose}) => {
 
     const handleCategoriesDeleteModal = () => {
         setCategoriesDeleteModal(!categoriesDeleteModal)
-
     }
 
     return <div className='P-categorises-content'>
@@ -34,18 +32,15 @@ const GetCategoriesAdmin = ({getElement, index, onCLose}) => {
 
 
         {categoriesEditModal ? <AddCategories onClose={handleCategoriesEditModal}
-            elementEdit={getElement}
-            elementIndex={index}
-            categoriesEditBtn={handleCategoriesEditModal}/> : null}
+                                              elementEdit={getElement}
+                                              elementIndex={index}
+                                              categoriesEditBtn={handleCategoriesEditModal}/> : null}
 
         {/* ========================== categories delete ========================== */}
 
-        {categoriesDeleteModal ? <CustomModal>
-            <DeleteCategories element={getElement}
-                              index={index}
-                              onClose={handleCategoriesDeleteModal}
-            />
-        </CustomModal> : null}
+        {categoriesDeleteModal ? <DeleteCustomModal name="categoriesX" element={getElement}
+                                                    index={index}
+                                                    onClose={handleCategoriesDeleteModal}/> : null}
     </div>
 }
 
