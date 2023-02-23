@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {pushProduct} from "../../../../store/combine-reducer/reducers/products";
 
 
-const AddProducts = ({productsItem, index, onClose}) => {
+const AddProducts = ({productsItem, onClose}) => {
     const categoriesList = useSelector(state => state.Categories.categoriesList)
     const productList = useSelector(state => state.Products.productList)
     const dispatch = useDispatch();
@@ -29,7 +29,14 @@ const AddProducts = ({productsItem, index, onClose}) => {
     // make empty input field
 
     const handleAddProducts = async () => {
-        await addProductsServer()
+
+        if (productsItem) {
+            await updateProductServer(productsItem._id)
+            console.log( "as")
+        }else{
+            await addProductsServer()
+
+        }
 
         // make input field empty
 
@@ -93,6 +100,16 @@ const AddProducts = ({productsItem, index, onClose}) => {
         }
     }
 
+    const updateProductServer = async (id) => {
+        const body = addProductsInfo
+        delete body._id
+        const result = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo/${id}`,body)
+        if (result) {
+            getProductsServer()
+            onClose()
+        }
+    }
+
 
     return <div className='P-product-modal-container G-center'>
         <div className='P-product-modal-bgColor'></div>
@@ -116,7 +133,8 @@ const AddProducts = ({productsItem, index, onClose}) => {
                         <input type='text'
                                onChange={handleProductChange}
                                name='productsName'
-                               value={addProductsInfo.productsName}/>
+                               value={addProductsInfo.productsName}
+                        />
                     </label>
                     <label>
                         <p>product description</p>

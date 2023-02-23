@@ -1,19 +1,22 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.scss";
 import {useDispatch} from "react-redux";
 import {addCategoriesList} from '../../../../store/combine-reducer/reducers/categories';
 import {addProducts} from "../../../../store/combine-reducer/reducers/products";
 import axios from "axios";
 
-const DeleteCustomModal = ({element, onClose, productsItem, productsIndex, name}) => {
+const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     const dispatch = useDispatch()
+    
 
     const handleDeleteIndex = (name) => {
         if (name = "categoriesX") {
             deleteCategoriesList()
+            onClose()
         }
         if (name = "productsX") {
             deleteProduct()
+            onClose()
         }
     }
 
@@ -51,13 +54,14 @@ const DeleteCustomModal = ({element, onClose, productsItem, productsIndex, name}
             {/*<p className='P-question-delete'>Are you sure you want to delete <span>{element.categoriesName}</span></p>*/}
             <p className='P-question-delete'>Are you sure you want to delete </p>
             <div className='G-flex G-justify-between P-delete-yes-no'>
+
                 {/*<button onClick={deleteCategoriesList}>Yes</button>*/}
+
                 <button onClick={handleDeleteIndex}>Yes</button>
-                <button onClick={onClose}>No</button>
+                {name = "categoriesX" ? <button onClick={onClose}>No</button> :
+                    name = "productsX" ? <button onClick={onClose}>No</button> : null}
             </div>
         </div>
-
-
     </div>
 }
 
