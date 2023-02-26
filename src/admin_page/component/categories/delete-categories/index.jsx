@@ -7,7 +7,7 @@ import axios from "axios";
 
 const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     const dispatch = useDispatch()
-    
+
 
     const handleDeleteIndex = (name) => {
         if (name = "categoriesX") {
@@ -51,15 +51,21 @@ const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     return <div className='P-delete-categories-modal G-center'>
         <div className='P-delete-modal-bgColor'></div>
         <div className='P-delete-ask G-center G-flex-column'>
-            {/*<p className='P-question-delete'>Are you sure you want to delete <span>{element.categoriesName}</span></p>*/}
-            <p className='P-question-delete'>Are you sure you want to delete </p>
+
+
+            <p className='P-question-delete'>Are you sure you want to delete<span>
+               { name === "categoriesX" ? element.categoriesName : productsItem.productsName}
+
+            </span>
+            </p>
+
+
             <div className='G-flex G-justify-between P-delete-yes-no'>
 
-                {/*<button onClick={deleteCategoriesList}>Yes</button>*/}
 
                 <button onClick={handleDeleteIndex}>Yes</button>
-                {name = "categoriesX" ? <button onClick={onClose}>No</button> :
-                    name = "productsX" ? <button onClick={onClose}>No</button> : null}
+                <button onClick={onClose}>No</button>
+
             </div>
         </div>
     </div>

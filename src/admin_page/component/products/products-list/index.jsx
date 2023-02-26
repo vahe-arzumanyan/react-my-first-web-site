@@ -38,7 +38,8 @@ const ProductsList = ({index, productsItem}) => {
         </div>
         {openDeleteModal ? <DeleteCustomModal name="productsX" productsItem={productsItem} productsIndex={index}
                                               onClose={onCloseDeleteModal}/> : null}
-        {openEditModal ? <AddProducts onClose={onCloseEditModal} productsItem={productsItem} productsIndex={index}/> : null}
+        {openEditModal ?
+            <AddProducts onClose={onCloseEditModal} productsItem={productsItem} productsIndex={index}/> : null}
 
     </div>
 }

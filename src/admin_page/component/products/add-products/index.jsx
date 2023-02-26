@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {pushProduct} from "../../../../store/combine-reducer/reducers/products";
 
 
-const AddProducts = ({productsItem, onClose}) => {
+const AddProducts = ({productsItem, onClose, editIndex}) => {
     const categoriesList = useSelector(state => state.Categories.categoriesList)
     const productList = useSelector(state => state.Products.productList)
     const dispatch = useDispatch();
@@ -22,20 +22,20 @@ const AddProducts = ({productsItem, onClose}) => {
 
     // ================ input products img ================
 
-    const handleCLoseProductModal = () => {
-        onClose()
-    }
+    // const handleCLoseProductModal = () => {
+    //     onClose()
+    // }
 
     // make empty input field
 
-    const handleAddProducts = async () => {
+    const handleAddProducts = async (id) => {
 
         if (productsItem) {
             await updateProductServer(productsItem._id)
-            console.log( "as")
+
         }else{
             await addProductsServer()
-
+            onClose()
         }
 
         // make input field empty
@@ -57,7 +57,8 @@ const AddProducts = ({productsItem, onClose}) => {
         const reader = new FileReader()
         reader.readAsDataURL(file)
         reader.onloadend = () => {
-            setAddProductsInfo({...addProductsInfo, productsImg: reader.result})
+            setAddProductsInfo({
+                ...addProductsInfo, productsImg: reader.result})
         }
     }
     // ============================ select changes ============================
@@ -101,11 +102,12 @@ const AddProducts = ({productsItem, onClose}) => {
     }
 
     const updateProductServer = async (id) => {
+        alert("a")
         const body = addProductsInfo
         delete body._id
-        const result = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo/${id}`,body)
+        const result = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo/${id}` ,body)
         if (result) {
-            getProductsServer()
+        getProductsServer()
             onClose()
         }
     }
@@ -172,7 +174,7 @@ const AddProducts = ({productsItem, onClose}) => {
 
                 <div className='G-justify-between P-product-add-close'>
                     <button onClick={handleAddProducts}>add</button>
-                    <button onClick={handleCLoseProductModal}>close</button>
+                    <button onClick={onClose}>close</button>
                 </div>
             </div>
 
