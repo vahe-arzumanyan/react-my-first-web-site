@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import './style.scss';
 // =========================================
 import axios from "axios";
@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {pushProduct} from "../../../../store/combine-reducer/reducers/products";
 
 
-const AddProducts = ({productsItem, onClose, editIndex}) => {
+const AddProducts = ({productsItem, onClose}) => {
     const categoriesList = useSelector(state => state.Categories.categoriesList)
     const productList = useSelector(state => state.Products.productList)
     const dispatch = useDispatch();
@@ -22,23 +22,18 @@ const AddProducts = ({productsItem, onClose, editIndex}) => {
 
     // ================ input products img ================
 
-    // const handleCLoseProductModal = () => {
-    //     onClose()
-    // }
-
     // make empty input field
 
-    const handleAddProducts = async (id) => {
-
+    const handleAddProducts = async () => {
         if (productsItem) {
             await updateProductServer(productsItem._id)
-
-        }else{
+        } else {
             await addProductsServer()
             onClose()
         }
 
         // make input field empty
+
 
         setAddProductsInfo({
             ...addProductsInfo,
@@ -58,7 +53,8 @@ const AddProducts = ({productsItem, onClose, editIndex}) => {
         reader.readAsDataURL(file)
         reader.onloadend = () => {
             setAddProductsInfo({
-                ...addProductsInfo, productsImg: reader.result})
+                ...addProductsInfo, productsImg: reader.result
+            })
         }
     }
     // ============================ select changes ============================
@@ -74,7 +70,6 @@ const AddProducts = ({productsItem, onClose, editIndex}) => {
                     dispatch(pushProduct({productList: item, categoriesName: item.categoriesName}))
                 }
             })
-
 
     }
 
@@ -102,16 +97,20 @@ const AddProducts = ({productsItem, onClose, editIndex}) => {
     }
 
     const updateProductServer = async (id) => {
-        alert("a")
-        const body = addProductsInfo
+        const body = addProductsInfo;
         delete body._id
-        const result = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo/${id}` ,body)
+        const result = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo/${id}`, body)
         if (result) {
-        getProductsServer()
+            getProductsServer()
             onClose()
         }
     }
 
+    useEffect(() => {
+        if (productsItem) {
+            setAddProductsInfo(productsItem)
+        }
+    }, [])
 
     return <div className='P-product-modal-container G-center'>
         <div className='P-product-modal-bgColor'></div>

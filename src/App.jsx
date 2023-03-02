@@ -13,17 +13,16 @@ import AdminPage from "./admin_page/component/admin-routing/index";
 
 const App = () => {
     return <div>
-       {/*this issss */}
        <div>
-           {/*<Header/>*/}
-           {/*<Routes>*/}
-           {/*    <Route path={"/Home"} element={<Home/>}/>*/}
-           {/*    <Route path={"/Shop"} element={<Shop/>}/>*/}
-           {/*    <Route path={"/Contact"} element={<Contact/>}/>*/}
-           {/*    <Route path={'/Home'} element={<Home/>}/>*/}
-           {/*</Routes>*/}
+           <Header/>
+           <Routes>
+               <Route path={"/Home"} element={<Home/>}/>
+               <Route path={"/Shop"} element={<Shop/>}/>
+               <Route path={"/Contact"} element={<Contact/>}/>
+               <Route path={'/Home'} element={<Home/>}/>
+           </Routes>
 
-        <AdminPage />
+        {/*<AdminPage />*/}
        </div>
     </div>
 }

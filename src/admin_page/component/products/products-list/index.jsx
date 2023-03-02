@@ -12,8 +12,7 @@ const ProductsList = ({index, productsItem}) => {
     }
 
     const onCloseEditModal = () => {
-        setEditModal(!openDeleteModal);
-
+        setEditModal(!openEditModal);
     }
 
     return <div className='G-flex G-flex-wrap'>
@@ -22,7 +21,7 @@ const ProductsList = ({index, productsItem}) => {
             {/* edit products / delete products*/}
 
             <div className='G-flex G-justify-between P-products-edit-delete'>
-                <button>Edit</button>
+                <button onClick={onCloseEditModal}>Edit</button>
                 <button onClick={onCloseDeleteModal}>Delete</button>
             </div>
             <div style={{backgroundImage: `url(${productsItem.productsImg})`}} alt={productsItem.alt}
