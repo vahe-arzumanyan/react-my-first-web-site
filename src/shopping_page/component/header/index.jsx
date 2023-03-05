@@ -3,10 +3,11 @@ import './style.scss'
 import {NavLink} from "react-router-dom";
 import {useState} from "react";
 import Login from "../login";
+import {useSelector} from "react-redux";
 
 
 const Header = () => {
-
+const basketList = useSelector(state => state.Basket.basketList)
     const [login, setLogin] = useState(false);
 
     const handleOpenLoginModal = () => {

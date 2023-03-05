@@ -68,4 +68,6 @@
 .icon-basket:before {
   content: "\e901";
   color:goldenrod;
+  /*font-weight: bold;*/
+  font-size: 20px;
 }
