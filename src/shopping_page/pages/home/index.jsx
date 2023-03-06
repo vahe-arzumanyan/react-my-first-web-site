@@ -130,7 +130,7 @@ const Home = () => {
             {/*============================== categories content  ==============================*/}
 
 
-            <div className='G-flex G-center P-margin-categories'>
+            <div className='G-container G-flex G-center P-margin-categories'>
                 <p className='P-title-categories'>CATEGORIES</p>
                 <div className='P-categories-line'></div>
             </div>
@@ -142,6 +142,7 @@ const Home = () => {
             }) : <Loading/>}
         </div>
 
+        {/*============================== product content  ==============================*/}
         <div className='G-container'>
             <div className='G-flex G-center P-margin-categories'>
                 <p className='P-title-categories'>FEATURED PRODUCTS</p>

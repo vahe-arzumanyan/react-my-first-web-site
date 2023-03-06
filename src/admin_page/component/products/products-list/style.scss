@@ -1,65 +1,77 @@
-.P-products-list{
-width: 350px;
-
+.P-products-list {
+  width: 350px;
   height: 350px;
   border: 1px solid #4c4b4b;
   margin: 30px;
+  trasnform: transition 0.3s;
+}
+
+.P-products-list .P-product-img:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.P-product-img-parent {
+  max-width: 230px;
+  width: 100%;
+  height: 216px;
+  overflow: hidden;
 }
 
 .P-product-img {
-  max-width: 230px;
   width: 100%;
- height: 216px;
+  height: 100%;
 }
 
-.P-products-name{
+.P-products-name {
   font-size: 16px;
   font-family: monospace;
   color: #3D464D;
-  margin:6px 0;
+  padding: 10px 0;
 
-  & span{
+  & span {
     color: #e74c3c;
   }
 }
 
-.P-products-price{
+.P-products-price {
   font-size: 16px;
   font-family: monospace;
   color: #404d3d;
 
-  & span{
+  & span {
     color: green;
   }
 
-  & .Product-price-value{
+  & .Product-price-value {
     color: green;
   }
 }
 
-.P-products-categories{
+.P-products-categories {
   font-size: 16px;
   font-family: monospace;
   color: #3D464D;
-  margin:6px 0;
+  margin: 6px 0;
 
-  & span{
+  & span {
     color: #3D464D;
   }
 }
 
 // **************************** edit delete ****************************
 
-.P-products-edit-delete{
+.P-products-edit-delete {
   width: 100%;
 
-  & button{
+  & button {
     font-size: 18px;
     color: #3D464D;
     font-family: monospace;
     padding: 7px 14px;
   }
-  & button:hover{
- color: #e74c3c;
+
+  & button:hover {
+    color: #e74c3c;
   }
 }

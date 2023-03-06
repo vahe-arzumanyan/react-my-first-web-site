@@ -7,27 +7,32 @@ import Shop from "./shopping_page/pages/shop";
 import Contact from "./shopping_page/pages/contact";
 import AdminPage from "./admin_page/component/admin-routing/index";
 import Basket from "./shopping_page/component/basket";
-
+import CategoriesFilter from "./shopping_page/pages/home/component/catigories/categories-filter";
+// filter
 
 // import {Switch, Route, NavLink, Link, Redirect} from 'react-router-dom';
 
 
 const App = () => {
     return <div>
-       <div>
-           <Header/>
-           <Routes>
-               <Route path={'/*'} element={<Home/>}/>
-               <Route path={"/Home"} element={<Home/>}/>
-               <Route path={"/Shop"} element={<Shop/>}/>
-               <Route path={"/Contact"} element={<Contact/>}/>
-           {/* basket / login */}
-           <Route path={"/Basket"} element={<Basket/>}/>
+        <div>
+            <Header/>
+            <Routes>
+                <Route path={'/*'} element={<Home/>}/>
+                <Route path={"/Home"} element={<Home/>}/>
+                <Route path={"/Shop"} element={<Shop/>}/>
+                <Route path={"/Contact"} element={<Contact/>}/>
 
-           </Routes>
+                {/* ====================== filter ====================== */}
+                <Route path={"categoriesFilter/:id"} element={<CategoriesFilter/>}/>
 
-        {/*<AdminPage />*/}
-       </div>
+                {/* ====================== basket ====================== */}
+                <Route path={"/Basket"} element={<Basket/>}/>
+
+            </Routes>
+
+            {/*<AdminPage />*/}
+        </div>
     </div>
 }
 

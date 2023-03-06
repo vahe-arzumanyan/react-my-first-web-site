@@ -4,9 +4,10 @@ import './style.scss'
 const ProductClient = ({item}) => {
     return <div>
         <div className='G-center G-flex-column P-products-list'>
-
-            <div style={{backgroundImage: `url(${item.productsImg})`}} alt={item.alt}
-                 className='G-image-cover P-product-img'></div>
+         <div className='P-product-img-parent'>
+             <div style={{backgroundImage: `url(${item.productsImg})`}} alt={item.alt}
+                  className='G-image-cover P-product-img'></div>
+         </div>
             <div className='G-center G-flex-column'>
                 <p className='P-products-name'>
                     <span>{item.productsName}</span></p>
