@@ -154,7 +154,7 @@ const Home = () => {
                 return <ProductClient
                     key={index}
                     item={item}/>
-            }) : null}
+            }) : <Loading />}
         </div>
 
         <Footer/>

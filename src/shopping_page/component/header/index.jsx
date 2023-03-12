@@ -2,17 +2,13 @@ import React from "react";
 import './style.scss'
 import {NavLink} from "react-router-dom";
 import {useState} from "react";
-import Login from "../login";
+import Login from "../login-register-form";
 import {useSelector} from "react-redux";
 
 
 const Header = () => {
-const basketList = useSelector(state => state.Basket.basketList)
-    const [login, setLogin] = useState(false);
+    const basketList = useSelector(state => state.Basket.basketList)
 
-    const handleOpenLoginModal = () => {
-        setLogin(!login)
-    }
 
     return <div className='P-header G-flex G-align-center'>
         <div className='G-container'>
@@ -42,11 +38,8 @@ const basketList = useSelector(state => state.Basket.basketList)
                         </div>
 
                         {/* ============================= Login ============================= */}
-                        <div>
-                            {login ? <Login/> : null}
-                        </div>
-                        <button onClick={handleOpenLoginModal} className='icon-login-btn'>
-                            <span className='icon-login'></span></button>
+
+                        <NavLink to={"login"}><span className='icon-login'></span></NavLink>
 
                     </div>
                 </ul>
