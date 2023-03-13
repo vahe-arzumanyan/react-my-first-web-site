@@ -9,9 +9,9 @@ const CustomInput = ({onChange, value, name, type, errorText}) => {
 
 
     return <div className='G-flex-column' style={{marginTop:'10px'}}>
-        <label className='P-input-login-name'>{name}</label>
+        <label className='G-input-name'>{name}</label>
         <p>{errorText}</p>
-        <input className='P-login-email'
+        <input className='G-input-line'
             onChange={handleLoginChange}
             value={value}
             name={name}
