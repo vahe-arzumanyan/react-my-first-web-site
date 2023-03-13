@@ -18,11 +18,11 @@ const Authorization = (createSlice({
                 state.identificationList = localUser
             }
         },
-        checkToke(state, action) {
-            state.userToke = action.payload
+        checkToken(state, action) {
+            state.userToken = action.payload
         }
     }
 }))
 
-export const {createUsers, checkUsers, checkToke} = Authorization.actions
+export const {createUsers, checkUsers, checkToken} = Authorization.actions
 export default Authorization.reducer;
