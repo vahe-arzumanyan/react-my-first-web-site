@@ -21,18 +21,18 @@ const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     }
 
     const deleteProduct = async () => {
-        await axios.delete(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo/${productsItem._id}`)
+        await axios.delete(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo/${productsItem._id}`)
         await getProductServer()
     }
 
     const deleteCategoriesList = async () => {
-        await axios.delete(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo/${element._id}`)
+        await axios.delete(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo/${element._id}`)
         await getCategories()
 
     }
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo')
+        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo')
         if (result.data) {
             dispatch(addCategoriesList(result.data))
             onClose()
@@ -40,7 +40,7 @@ const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     }
 
     const getProductServer = async () => {
-        const result = await axios.get('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo')
+        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo')
         if (result.data) {
             dispatch(addProducts(result.data))
             onClose()

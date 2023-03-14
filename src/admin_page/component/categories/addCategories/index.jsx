@@ -29,12 +29,12 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     const editData = async (id) => {
         const body = addCategoriesInfo
         delete body._id
-        await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo/${id}`, body)
+        await axios.put(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo/${id}`, body)
             getCategories()
     }
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo')
+        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo')
         if (result.data) {
             dispatch(addCategoriesList(result.data))
             // console.log(result.data)
@@ -44,7 +44,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
 
     const postCategories = async () => {
-        const result = await axios.post('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo', addCategoriesInfo)
+        const result = await axios.post('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo', addCategoriesInfo)
         if (result.data) {
             await getCategories()
             onClose()

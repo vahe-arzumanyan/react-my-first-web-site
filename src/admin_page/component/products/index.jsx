@@ -16,7 +16,7 @@ const Products = () => {
     const dispatch = useDispatch();
 
     const getProductsServer = async () => {
-        const result = await axios.get("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo")
+        const result = await axios.get("https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo")
         if (result.data) {
             dispatch(addProducts(result.data))
         }

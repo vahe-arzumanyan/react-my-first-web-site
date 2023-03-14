@@ -16,7 +16,7 @@ const Categories = () => {
 
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addCategoriesInfo')
+        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo')
         if (result.data) {
             dispatch(addCategoriesList(result.data))
             console.log(result.data)

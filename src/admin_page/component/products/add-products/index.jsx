@@ -83,14 +83,14 @@ const AddProducts = ({productsItem, onClose}) => {
     // *********************** AXIOS **********************
 
     const addProductsServer = async () => {
-        const result = await axios.post("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo", addProductsInfo)
+        const result = await axios.post("https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo", addProductsInfo)
         if (result.data) {
             await getProductsServer()
         }
     }
 
     const getProductsServer = async () => {
-        const result = await axios.get("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo")
+        const result = await axios.get("https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo")
         if (result.data) {
             dispatch(addProducts(result.data))
         }
@@ -99,7 +99,7 @@ const AddProducts = ({productsItem, onClose}) => {
     const updateProductServer = async (id) => {
         const body = addProductsInfo;
         delete body._id
-        const result = await axios.put(`https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo/${id}`, body)
+        const result = await axios.put(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo/${id}`, body)
         if (result) {
             getProductsServer()
             onClose()
