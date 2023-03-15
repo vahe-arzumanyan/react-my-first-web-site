@@ -27,6 +27,9 @@ const RegisterForm = ({registerLoginModal}) => {
         setErrorTextRegisterUser({...errorTextRegisterUser, [e.target.name]: e.target.value})
     }
 
+    const handleClick = () => {
+
+    }
     // ===========================  ===========================
 
 
@@ -68,6 +71,11 @@ const RegisterForm = ({registerLoginModal}) => {
                 errorText={errorTextRegisterUser.errorPassword}
             />
         </div>
+        <button onClick={handleClick} style={{width: "100%"}} className='G-center'>
+            <p className='P-finish'>
+                finish
+            </p>
+        </button>
     </div>
 }
 
