@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRegisterValidation} from "react";
+import React, {useState, useEffect} from "react";
 import './style.scss';
 import CustomInput from "../../custom-input";
 import {createUsers} from "../../../../store/combine-reducer/reducers/authorization";
