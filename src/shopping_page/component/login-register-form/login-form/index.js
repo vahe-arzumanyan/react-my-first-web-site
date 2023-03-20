@@ -22,7 +22,7 @@ const LoginForm = ({registerLoginModal}) => {
 
     // ============================== onChange ==============================
 
-    const handleLoginChange = (e) => {
+    const handleChange = (e) => {
         setLoginUser({...loginUser, [e.target.name]: e.target.value})
         setLoginErrorText({...loginErrorText, [e.target.name]: ''})
     }
@@ -36,23 +36,23 @@ const LoginForm = ({registerLoginModal}) => {
     const validation = () => {
         let isValidation = true;
         const errorString = {
-            email: '',
-            password: ''
+            errorEmail: '',
+            errorPassword: ''
         }
 
         const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
         if (!loginUser.password.trim().length) {
-            errorString.errorPassword = 'fill in all fields'
+            errorString.errorPassword = "Fill in The Required Password"
             isValidation = false;
         }
 
         if (!loginUser.email.trim().length) {
-            errorString.errorPassword = 'fill in all fields'
+            errorString.errorPassword = "Fill in The Required Email"
             isValidation = false
 
         }if (!validEmail.test(loginUser.email)) {
-            errorString.errorEmail = 'fill in all fields'
+            errorString.errorEmail = "Fill in Email"
             isValidation = false
         }
 
@@ -86,14 +86,14 @@ const LoginForm = ({registerLoginModal}) => {
     return <div className={`P-login-form ${registerLoginModal ? "P-login-content-hide" : null}`}>
         <div className='G-flex-column'>
             <CustomInput
-                onChange={handleLoginChange}
+                onChange={handleChange}
                 value={loginUser.email}
                 name='email'
                 type='text'
                 errorText={loginErrorText.errorEmail}
             />
             <CustomInput
-                onChange={handleLoginChange}
+                onChange={handleChange}
                 value={loginUser.password}
                 name='password'
                 type='password'

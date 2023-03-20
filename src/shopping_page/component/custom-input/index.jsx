@@ -3,7 +3,7 @@ import './style.scss';
 
 const CustomInput = ({onChange, value, name, type, errorText}) => {
 
-    const handleLoginChange = (e) => {
+    const handleChange = (e) => {
         onChange(e);
     }
 
@@ -12,7 +12,7 @@ const CustomInput = ({onChange, value, name, type, errorText}) => {
         <label className='G-input-name'>{name}</label>
 
         <input className='G-input-line'
-            onChange={handleLoginChange}
+            onChange={handleChange}
             value={value}
             name={name}
             type={type}
