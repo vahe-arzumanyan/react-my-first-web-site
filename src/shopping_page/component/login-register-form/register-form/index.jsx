@@ -3,13 +3,14 @@ import './style.scss';
 import CustomInput from "../../custom-input";
 import {createUsers} from "../../../../store/combine-reducer/reducers/authorization";
 import {useDispatch, useSelector} from "react-redux";
+import useRegisterValidation from "../hook-validation";
 
 
 const RegisterForm = ({registerLoginModal}) => {
 
     const authorizationList = useSelector(state => state.Authorization.authorizationList);
     const dispatch = useDispatch();
-    const {validation, errorTextRegisterUser, setErrorTextRegisterUser} = useRegisterValidation()
+    const  {validation, errorTextRegisterUser, setErrorTextRegisterUser} = useRegisterValidation()
 
     const [registerUser, setRegisterUser] = useState({
         firstName: '',
@@ -36,7 +37,7 @@ const RegisterForm = ({registerLoginModal}) => {
     }, [authorizationList])
 
 
-    const handleClick = ({validation}) => {
+    const handleClick = () => {
         if (validation(registerUser)) {
             dispatch(createUsers(registerUser))
             setRegisterUser({
@@ -51,63 +52,7 @@ const RegisterForm = ({registerLoginModal}) => {
     }
 
 
-    // =========================== input validation start ===========================
 
-    const useRegisterValidation = () => {
-        const [errorTextRegisterUser, setErrorTextRegisterUser] = useState({
-            errorFirstName: '',
-            errorLastName: '',
-            errorEmail: '',
-            errorPassword: '',
-            errorConfirmPassword: ''
-        })
-
-        const validation = (registerUser) => {
-            let isValidate = true;
-            let errorString = {
-                errorFirstName: '',
-                errorLastName: '',
-                errorEmail: '',
-                errorPassword: '',
-                errorConfirmPassword: ''
-            }
-
-            const validEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-
-            if (!registerUser.firstName.trim().length) {
-                errorString.errorFirstName = 'fill in the required first name'
-                isValidate = false;
-            }
-
-            if (!registerUser.lastName.trim().length) {
-                errorString.errorLastName = 'fill in the required last name'
-                isValidate = false;
-            }
-
-            if (!registerUser.email.trim().length) {
-                errorString.errorEmail = 'fill in the required email'
-                isValidate = false;
-            } else if (!validEmail.test(registerUser.errorEmail)) {
-                errorString.errorEmail = 'fill in email'
-            }
-
-            if (!registerUser.password.trim().length) {
-                errorString.errorPassword = 'fill in the required password'
-                isValidate = false;
-            } else if (registerUser.confirmPassword.trim().length && registerUser.confirmPassword.trim().length !== registerUser.password.length) {
-                errorString.errorConfirmPassword = 'do not correspond to each other confirm password and password'
-                isValidate = false;
-            }
-
-            setErrorTextRegisterUser(errorString)
-            return isValidate;
-
-        }
-        return {validation, errorTextRegisterUser, setErrorTextRegisterUser}
-    }
-
-
-    // =========================== input validation start ===========================
 
     return <div className={`P-register-form ${registerLoginModal ? "P-register-content-hide" : null}`}>
         <div className='G-flex-column hh'>
