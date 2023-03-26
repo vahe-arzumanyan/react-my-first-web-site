@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?qxr8at');
-  src:  url('fonts/icomoon.eot?qxr8at#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?qxr8at') format('truetype'),
-    url('fonts/icomoon.woff?qxr8at') format('woff'),
-    url('fonts/icomoon.svg?qxr8at#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?4tbxo');
+  src:  url('fonts/icomoon.eot?4tbxo#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?4tbxo') format('truetype'),
+    url('fonts/icomoon.woff?4tbxo') format('woff'),
+    url('fonts/icomoon.svg?4tbxo#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,49 +25,45 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-login:before {
+  content: "\e907";
+  color: goldenrod;
+  font-size: 25px;
+}
+.icon-logout:before {
+  content: "\e908";
+  color: goldenrod;
+  font-size: 25px;
+  margin: 0 30px 0 0;
+}
+
 .icon-call:before {
   content: "\e903";
-  color:gold;
+  color: goldenrod;
   font-size: 30px;
-  font-weight: 500;
 }
-
 .icon-equal:before {
   content: "\e904";
-  color:gold;
+  color: goldenrod;
   font-size: 30px;
-  font-weight: 500;
 }
-
 .icon-done:before {
   content: "\e905";
-  color:gold;
-  font-size: 30px;
-  font-weight: 500;
+  color: goldenrod;
+font-size: 30px;
 }
-
 .icon-shipping-car:before {
   content: "\e906";
-  color:gold;
+  color: goldenrod;
   font-size: 30px;
-  font-weight: 500;
 }
-
-.icon-login:before {
-  content: "\e902";
-  color:cadetblue;
-  font-size: 24px;
-  margin: 0 5px;
-}
-
 .icon-heart-fill:before {
   content: "\e900";
-  color:goldenrod;
+  color: goldenrod;
+  font-size: 18px;
 }
-
 .icon-basket:before {
   content: "\e901";
-  color:goldenrod;
-  /*font-weight: bold;*/
-  font-size: 20px;
+  color: goldenrod;
+  font-size: 18px;
 }

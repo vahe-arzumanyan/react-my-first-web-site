@@ -14,7 +14,7 @@ const Header = () => {
         <div className='G-container'>
             <div className='G-flex G-align-center G-justify-between'>
                 <div className='G-flex'>
-                    <h1 className='P-logo-multi'>MULTI</h1>
+                    <h1 className='P-logo-multi'>CUSTOM</h1>
                     <h1 className='P-logo-shop'>SHOP</h1>
                 </div>
                 <ul className='G-flex P-header-ul'>

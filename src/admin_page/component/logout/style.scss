@@ -1,0 +1,39 @@
+.P-logout-content {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.P-logout-bgColor {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  opacity: 0.4;
+}
+
+
+.P-logout-modal {
+  max-width: 500px;
+  min-height: 150px;
+  position: relative;
+  background-color: #2D2F33;
+  padding: 30px;
+}
+
+.P-logout-modal button {
+  margin: 20px 20px;
+  font-size: 18px;
+  color: #e74c3c;
+  font-family: monospace;
+}
+
+.P-logout-modal p {
+  font-size: 22px;
+  color: wheat;
+  font-family: monospace;
+
+}

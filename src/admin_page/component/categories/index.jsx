@@ -30,7 +30,11 @@ const Categories = () => {
 
     return <>
         <RightSideBar name='add-categories'>
-            <CustomAddBtn name="Add Categories"/>
+            <div className='G-flex G-justify-between G-align-center'>
+                <CustomAddBtn name="Add Categories"/>
+            </div>
+
+
         </RightSideBar>
 
         <div className="G-flex G-center G-flex-wrap P-categories-container">
@@ -40,7 +44,7 @@ const Categories = () => {
                     getElement={getElement}
                     getCategories={getCategories}
                 />
-            }) : <Loading />
+            }) : <Loading/>
             }
         </div>
     </>

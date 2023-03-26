@@ -10,12 +10,12 @@ const Authorization = (createSlice({
     initialState,
     reducers: {
         createUsers(state, action) {
-            state.indeficationList = [...state.authorizationList, action.payload]
+            state.authorizationList = [...state.authorizationList, action.payload]
         },
         checkUsers(state, action) {
             const localUser = JSON.parse(localStorage.getItem('authorizationUser'))
             if (localUser) {
-                state.identificationList = localUser
+                state.authorizationList = localUser
             }
         },
         checkToken(state, action) {

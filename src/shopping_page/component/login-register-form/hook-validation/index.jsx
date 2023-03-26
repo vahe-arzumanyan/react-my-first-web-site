@@ -31,10 +31,10 @@ const useRegisterValidation = () => {
             isValidate = false
         }
 
-        if (!registerUser.email.trim().length) {
-            errorString.errorEmail = 'fill in the required email'
-            isValidate = false;
-        } else if (!validEmail.test(registerUser.email)) {
+       if(!registerUser.email.trim().length){
+           errorString.errorEmail = 'fill in the required email'
+       }
+        else if (!validEmail.test(registerUser.email)) {
             errorString.errorEmail = 'fill in email'
             isValidate = false
         }
@@ -52,9 +52,9 @@ const useRegisterValidation = () => {
             errorString.errorConfirmPassword = 'fill in the required confirm password'
             isValidate = false
         }
-        else if(registerUser.errorConfirmPassword.trim().length && registerUser.confirmPassword.trim().length !== registerUser.password.length) {
+        else if(registerUser.confirmPassword.trim().length && registerUser.confirmPassword.trim().length !== registerUser.password.length) {
             errorString.errorConfirmPassword = 'do not correspond to each other confirm password and password'
-            isValidate = false;
+            isValidate = false
         }
 
         setErrorTextRegisterUser(errorString)
