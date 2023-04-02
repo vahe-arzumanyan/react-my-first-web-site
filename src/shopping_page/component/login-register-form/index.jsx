@@ -10,16 +10,23 @@ const LoginRegister = () => {
     const handleLoginRegisterClick = () => {
         setRegisterLoginModal(!registerLoginModal)
     }
+
+    const handleClose = () => {
+       if(registerLoginModal){
+           handleLoginRegisterClick(false)
+       }
+    }
+
     return <div className='P-login G-center'>
-        <div className="P-login-modal-bg"></div>
+        <div className="P-login-modal-bg" onClick={handleClose}></div>
         <div className="P-login-modal-container">
             <button onClick={handleLoginRegisterClick} className='P-login-register G-center'>
                 {registerLoginModal ? "Login" : "Register"}
             </button>
-         <div className='G-center' style={{marginTop:'70px', width:'100%'}}>
-             <LoginForm registerLoginModal={registerLoginModal} />
-             <RegisterForm registerLoginModal={registerLoginModal} />
-         </div>
+            <div className='G-center' style={{marginTop: '70px', width: '100%'}}>
+                <LoginForm registerLoginModal={registerLoginModal}/>
+                <RegisterForm registerLoginModal={registerLoginModal}/>
+            </div>
         </div>
     </div>
 }

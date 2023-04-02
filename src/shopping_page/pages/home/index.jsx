@@ -16,6 +16,8 @@ import axios from "axios";
 import Loading from "../../../admin_page/component/loading";
 import CategoriesClient from "./component/catigories";
 import ProductClient from "./component/product";
+import useSponsor from "../../component/sponsor/sponsor-product-hook";
+import Sponsor from "../../component/sponsor";
 
 
 const Home = () => {
@@ -56,6 +58,15 @@ const Home = () => {
         ]
     };
 
+    const settingsSponsor = {
+        dots: true,
+        slidesToShow: 6,
+        slidesToScroll: 2,
+        autoplaySpeed: 2000,
+        autoplay: true,
+        arrows: false
+    };
+
     const [topSlick, setTopSlick] = useState([
         {
             title: 'Men Fashion',
@@ -81,6 +92,10 @@ const Home = () => {
 
     const [categoriesClient, setCategoriesClient] = useState([])
     const [productsClient, setProductsClient] = useState([])
+
+//    sponsor product / hook
+
+    const [sponsor, setSponsor] = useSponsor();
 
 // ============================== SERVER REQUEST ==============================
 
@@ -154,8 +169,16 @@ const Home = () => {
                 return <ProductClient
                     key={index}
                     item={item}/>
-            }) : <Loading />}
+            }) : <Loading/>}
         </div>
+
+        {/* slick carousel sponsors */}
+        <Slider {...settingsSponsor} >
+            {sponsor.map((item, index) => {
+                return <Sponsor item={item} key={index}/>
+            })}
+        </Slider>
+
 
         <Footer/>
 
