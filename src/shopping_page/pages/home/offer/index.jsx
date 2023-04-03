@@ -22,10 +22,12 @@ const Offer = () => {
 
     return <div className='P-offer-content'>
         {offer.length ? offer.map((item, index) => {
-            return  <div item={item} key={index}>
-                <div style={{backgroundImage: `url(${item.offerImg})`}} alt={item.alt} className='G-image-cover P-offer-img'>
-                    <p>{item.title}</p>
-                    <p>{item.description}</p>
+            return  <div item={item} key={index} className='G-center'>
+                <div style={{backgroundImage: `url(${item.offerImg})`}} alt={item.alt} className='G-image-cover P-offer-img G-center'>
+                   <div className='G-flex-column G-center'>
+                       <p className='P-offer-title'>{item.title}</p>
+                       <p className='P-offer-description'>{item.description}</p>
+                   </div>
                 </div>
             </div>
         }) : null}
