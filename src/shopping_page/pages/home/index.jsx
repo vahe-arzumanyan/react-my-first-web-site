@@ -121,8 +121,8 @@ const Home = () => {
 
 // ============================== JSX ==============================
 
-    return <>
-        <div className='G-container'>
+    return <div className='G-container'>
+        <div>
 
             {/*============================== SLick Slider start ==============================*/}
 
@@ -182,7 +182,7 @@ const Home = () => {
 
         <Footer/>
 
-    </>
+    </div>
 }
 
 export default Home;

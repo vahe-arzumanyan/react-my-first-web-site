@@ -10,7 +10,8 @@ const Header = () => {
     const basketList = useSelector(state => state.Basket.basketList)
 
 
-    return <div className='P-header G-flex G-align-center'>
+    return <div className='G-container'>
+    <div className='P-header G-flex G-align-center'>
         <div className='G-container'>
             <div className='G-flex G-align-center G-justify-between'>
                 <div className='G-flex'>
@@ -45,6 +46,7 @@ const Header = () => {
                 </ul>
             </div>
         </div>
+    </div>
     </div>
 }
 
