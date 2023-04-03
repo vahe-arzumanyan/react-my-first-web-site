@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/vahe-arzumanyan/react-my-first-web-site/static/css/main.71fb8c21.css",
+    "main.js": "/vahe-arzumanyan/react-my-first-web-site/static/js/main.565e3645.js",
+    "static/media/sponsor3.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor3.c6e7d504dd672adb2f5a.jpg",
+    "static/media/sponsor2.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor2.64f61da896531ae6c83c.jpg",
+    "static/media/sponsor12.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor12.afb91ab44d49d2bcd3d8.jpg",
+    "static/media/offer-2.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/offer-2.3783f9c9664ef35fed27.jpg",
+    "static/media/offer-1.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/offer-1.fd8b95c7dec1c3cad82d.jpg",
+    "static/media/sponsor9.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor9.8bfad92ad0d94f2dbb6c.jpg",
+    "static/media/carousel-3.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/carousel-3.064749b90f92a0632132.jpg",
+    "static/media/carousel-2.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/carousel-2.75832f83282dab0ad4b0.jpg",
+    "static/media/carousel-1.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/carousel-1.3573a1eeae4d2857e733.jpg",
+    "static/media/sponsor8.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor8.3f7dec5055b7978f84e9.jpg",
+    "static/media/sponsor5.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor5.872df257ca599600fccd.jpg",
+    "static/media/sponsor11.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor11.0ae16f0529308e660a81.jpg",
+    "static/media/sponsor6.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor6.235980a3840ca23131b3.jpg",
+    "static/media/sponsor7.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor7.edfcc22ef8044cd8d6ee.jpg",
+    "static/media/sponsor10.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor10.7286e032ef91cf7bd4bf.jpg",
+    "static/media/sponsor4.jpg": "/vahe-arzumanyan/react-my-first-web-site/static/media/sponsor4.1e3fab1b0932d05d5b4c.jpg",
+    "static/media/icomoon.svg?4tbxo": "/vahe-arzumanyan/react-my-first-web-site/static/media/icomoon.f1432862bddfc3ce3d99.svg",
+    "static/media/icomoon.eot?4tbxo": "/vahe-arzumanyan/react-my-first-web-site/static/media/icomoon.085d6aeafc9158ae658d.eot",
+    "static/media/icomoon.woff?4tbxo": "/vahe-arzumanyan/react-my-first-web-site/static/media/icomoon.c0ca36d87368b05ac131.woff",
+    "static/media/icomoon.ttf?4tbxo": "/vahe-arzumanyan/react-my-first-web-site/static/media/icomoon.2e414edb90448e04255c.ttf",
+    "static/media/slick.svg": "/vahe-arzumanyan/react-my-first-web-site/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/vahe-arzumanyan/react-my-first-web-site/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/vahe-arzumanyan/react-my-first-web-site/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/vahe-arzumanyan/react-my-first-web-site/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/vahe-arzumanyan/react-my-first-web-site/index.html",
+    "main.71fb8c21.css.map": "/vahe-arzumanyan/react-my-first-web-site/static/css/main.71fb8c21.css.map",
+    "main.565e3645.js.map": "/vahe-arzumanyan/react-my-first-web-site/static/js/main.565e3645.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71fb8c21.css",
+    "static/js/main.565e3645.js"
+  ]
+}
