@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-my-first-web-site/static/css/main.4a4752e2.css",
-    "main.js": "/react-my-first-web-site/static/js/main.76356942.js",
+    "main.css": "/react-my-first-web-site/static/css/main.d455d7ba.css",
+    "main.js": "/react-my-first-web-site/static/js/main.a1e609e1.js",
     "static/media/sponsor3.jpg": "/react-my-first-web-site/static/media/sponsor3.c6e7d504dd672adb2f5a.jpg",
     "static/media/sponsor2.jpg": "/react-my-first-web-site/static/media/sponsor2.64f61da896531ae6c83c.jpg",
     "static/media/sponsor12.jpg": "/react-my-first-web-site/static/media/sponsor12.afb91ab44d49d2bcd3d8.jpg",
@@ -27,11 +27,11 @@
     "static/media/slick.ttf": "/react-my-first-web-site/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-my-first-web-site/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-my-first-web-site/index.html",
-    "main.4a4752e2.css.map": "/react-my-first-web-site/static/css/main.4a4752e2.css.map",
-    "main.76356942.js.map": "/react-my-first-web-site/static/js/main.76356942.js.map"
+    "main.d455d7ba.css.map": "/react-my-first-web-site/static/css/main.d455d7ba.css.map",
+    "main.a1e609e1.js.map": "/react-my-first-web-site/static/js/main.a1e609e1.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a4752e2.css",
-    "static/js/main.76356942.js"
+    "static/css/main.d455d7ba.css",
+    "static/js/main.a1e609e1.js"
   ]
 }
