@@ -1,7 +1,13 @@
 .P-header{
+  max-width: 1920px;
   width: 100%;
   height: 73px;
   background-color: #3D464D ;
+  //@media screen and (max-width: 320px){
+  //  width: 100%;
+  //  background-color: red;
+  //  height: 20px;
+  //}
 }
 
 .P-logo-multi{

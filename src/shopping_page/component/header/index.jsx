@@ -10,7 +10,7 @@ const Header = () => {
     const basketList = useSelector(state => state.Basket.basketList)
 
 
-    return <div className='G-container'>
+    return <>
     <div className='P-header G-flex G-align-center'>
         <div className='G-container'>
             <div className='G-flex G-align-center G-justify-between'>
@@ -47,7 +47,7 @@ const Header = () => {
             </div>
         </div>
     </div>
-    </div>
+    </>
 }
 
 export default Header;

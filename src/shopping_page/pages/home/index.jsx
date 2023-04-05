@@ -122,7 +122,6 @@ const Home = () => {
 // ============================== JSX ==============================
 
     return <div className='G-container'>
-        <div>
 
             {/*============================== SLick Slider start ==============================*/}
 
@@ -149,7 +148,7 @@ const Home = () => {
                 <p className='P-title-categories'>CATEGORIES</p>
                 <div className='P-categories-line'></div>
             </div>
-        </div>
+
         <div className='G-flex G-flex-wrap G-center'>
             {categoriesClient.length ? categoriesClient.map((item, index) => {
                 return <CategoriesClient key={index}

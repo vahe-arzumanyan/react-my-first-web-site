@@ -1,6 +1,7 @@
 .P-offer-content {
   margin-top: 40px;
-  width: calc(1200px - 700px);
+  //width: calc(1200px - 700px);
+  max-width: 400px;
   width: 100%;
   height: 440px;
 
@@ -13,7 +14,7 @@
   max-width: 387px;
   width: 100%;
   height: 200px;
-  background-color: blue;
+  background-color: black;
 }
 
 .P-offer-title {

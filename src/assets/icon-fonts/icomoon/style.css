@@ -39,22 +39,22 @@
 
 .icon-call:before {
   content: "\e903";
-  color: goldenrod;
+  color: white;
   font-size: 30px;
 }
 .icon-equal:before {
   content: "\e904";
-  color: goldenrod;
+  color: white;
   font-size: 30px;
 }
 .icon-done:before {
   content: "\e905";
-  color: goldenrod;
+  color: white;
 font-size: 30px;
 }
 .icon-shipping-car:before {
   content: "\e906";
-  color: goldenrod;
+  color: white;
   font-size: 30px;
 }
 .icon-heart-fill:before {

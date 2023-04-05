@@ -27,7 +27,7 @@ const ShippingInfo = () => {
             return <div item={item} key={index} style={{margin:'50px 0'}}>
                 <div className='G-center P-shipping'>
                     <span className={item.svgIcon} style={{margin: '0 15px'}}></span>
-                    <p>{item.title}</p>
+                    <p style={{color:'white'}}>{item.title}</p>
                 </div>
             </div>
         }) : null}
