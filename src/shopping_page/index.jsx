@@ -18,22 +18,24 @@ const ShoppingPage = () => {
     return <div>
         <div>
             <Header/>
-            <Routes>
-                <Route path={"/*"} element={<Home/>}/>
-                <Route path={"/Home"} element={<Home/>}/>
-                <Route path={"/Shop"} element={<Shop/>}/>
-                <Route path={"/Contact"} element={<Contact/>}/>
+           {/*<div className='G-container'>*/}
+           {/*    <Routes>*/}
+           {/*        <Route path={"/*"} element={<Home/>}/>*/}
+           {/*        <Route path={"/Home"} element={<Home/>}/>*/}
+           {/*        <Route path={"/Shop"} element={<Shop/>}/>*/}
+           {/*        <Route path={"/Contact"} element={<Contact/>}/>*/}
 
-                {/* ====================== filter ====================== */}
-                <Route path={"categoriesFilter/:id"} element={<CategoriesFilter/>}/>
-                <Route path={"categoriesFilterProduct/:id"} element={<CategoriesFilterProduct/>}/>
+           {/*        /!* ====================== filter ====================== *!/*/}
+           {/*        <Route path={"categoriesFilter/:id"} element={<CategoriesFilter/>}/>*/}
+           {/*        <Route path={"categoriesFilterProduct/:id"} element={<CategoriesFilterProduct/>}/>*/}
 
-                {/* ====================== basket ====================== */}
-                <Route path={"/Basket"} element={<Basket/>}/>
+           {/*        /!* ====================== basket ====================== *!/*/}
+           {/*        <Route path={"/Basket"} element={<Basket/>}/>*/}
 
-                {/* ====================== login / register ====================== */}
-                <Route path={"/login"} element={<LoginRegister/>}/>
-            </Routes>
+           {/*        /!* ====================== login / register ====================== *!/*/}
+           {/*        <Route path={"/login"} element={<LoginRegister/>}/>*/}
+           {/*    </Routes>*/}
+           {/*</div>*/}
 
         </div>
     </div>

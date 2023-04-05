@@ -22,12 +22,12 @@ const ShippingInfo = () => {
         }
     ])
 
-    return <div className='G-flex G-justify-between'>
+    return <div className='G-flex G-justify-between' style={{width:'100%'}}>
         {shippingInfo.length ? shippingInfo.map((item, index) => {
-            return <div item={item} key={index} style={{margin:'50px 0'}}>
+            return <div item={item} key={index}>
                 <div className='G-center P-shipping'>
-                    <span className={item.svgIcon} style={{margin: '0 15px'}}></span>
-                    <p style={{color:'white'}}>{item.title}</p>
+                    {/*<span className={item.svgIcon} style={{margin: '0 15px'}}></span>*/}
+                    {/*<p style={{color:'white'}}>{item.title}</p>*/}
                 </div>
             </div>
         }) : null}

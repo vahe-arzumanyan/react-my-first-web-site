@@ -4,7 +4,7 @@
   height: 100px;
   margin: 15px;
   border-radius: 15px;
-  background-color: #e3dbcb;
+  background-color: gray;
   transition: 0.3s;
 
   :hover {
@@ -29,6 +29,10 @@
 .P-client-categories-name {
   font-family: monospace;
   font-size: 24px;
-  color: brown;
+  color: white;
   margin: 0 15px;
+  transition: 0.3s;
+}
+.P-categorises-client-content:hover .P-client-categories-name{
+  color:black;
 }

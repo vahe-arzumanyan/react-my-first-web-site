@@ -1,7 +1,7 @@
 .P-header{
-  max-width: 1920px;
-  width: 100%;
-  height: 73px;
+  width: 100vw;
+height: 73px;
+
   background-color: #3D464D ;
   //@media screen and (max-width: 320px){
   //  width: 100%;
@@ -10,15 +10,15 @@
   //}
 }
 
-.P-logo-multi{
-  color:goldenrod;
-  background-color: black;
+.P-logo-custom{
+  color:white;
+  background-color: #2D2F33;
   padding: 3px;
 }
 
 .P-logo-shop{
   color: black;
-  background-color: goldenrod;
+  background-color: red;
   padding: 3px;
 }
 
