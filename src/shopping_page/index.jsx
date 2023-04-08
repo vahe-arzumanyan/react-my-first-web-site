@@ -12,31 +12,26 @@ import CategoriesFilterProduct from "./pages/home/component/catigories/categorie
 import LoginRegister from "./component/login-register-form";
 
 
-
-
 const ShoppingPage = () => {
     return <div>
-        <div>
-            <Header/>
-           {/*<div className='G-container'>*/}
-           {/*    <Routes>*/}
-           {/*        <Route path={"/*"} element={<Home/>}/>*/}
-           {/*        <Route path={"/Home"} element={<Home/>}/>*/}
-           {/*        <Route path={"/Shop"} element={<Shop/>}/>*/}
-           {/*        <Route path={"/Contact"} element={<Contact/>}/>*/}
+        <Header/>
+        <div className='gh'>
+            <Routes>
+                <Route path={"/*"} element={<Home/>}/>
+                <Route path={"/Home"} element={<Home/>}/>
+                <Route path={"/Shop"} element={<Shop/>}/>
+                <Route path={"/Contact"} element={<Contact/>}/>
 
-           {/*        /!* ====================== filter ====================== *!/*/}
-           {/*        <Route path={"categoriesFilter/:id"} element={<CategoriesFilter/>}/>*/}
-           {/*        <Route path={"categoriesFilterProduct/:id"} element={<CategoriesFilterProduct/>}/>*/}
+                {/* ====================== filter ====================== */}
+                <Route path={"categoriesFilter/:id"} element={<CategoriesFilter/>}/>
+                <Route path={"categoriesFilterProduct/:id"} element={<CategoriesFilterProduct/>}/>
 
-           {/*        /!* ====================== basket ====================== *!/*/}
-           {/*        <Route path={"/Basket"} element={<Basket/>}/>*/}
+                {/* ====================== basket ====================== */}
+                <Route path={"/Basket"} element={<Basket/>}/>
 
-           {/*        /!* ====================== login / register ====================== *!/*/}
-           {/*        <Route path={"/login"} element={<LoginRegister/>}/>*/}
-           {/*    </Routes>*/}
-           {/*</div>*/}
-
+                {/* ====================== login / register ====================== */}
+                <Route path={"/login"} element={<LoginRegister/>}/>
+            </Routes>
         </div>
     </div>
 }

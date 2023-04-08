@@ -1,0 +1,17 @@
+    const Validation = () => {
+        let validate = true;
+        let errorString = {
+            name: '',
+            img:''
+        }
+
+        if(!addCategoriesInfo.categoriesName){
+            errorText.name= 'fill in the request name'
+            valid = false;
+        }
+        if(!addCategoriesInfo.categoriesImg){
+            errorText.img= 'fill in the request image'
+
+            setErrorText(errorString)
+            return validate
+        }

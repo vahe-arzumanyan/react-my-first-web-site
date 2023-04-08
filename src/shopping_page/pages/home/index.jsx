@@ -123,37 +123,36 @@ const Home = () => {
 
     return <div className='G-container'>
 
-            {/*============================== SLick Slider start ==============================*/}
+        {/*============================== SLick Slider start ==============================*/}
 
-            <div className='G-flex-column'>
-              <div className='G-justify-between'>
-                  <div className='P-home-slick'>
-                      {topSlick.length ?
-                          <Slider {...settingsSlider}>
-                              {topSlick.map((item, index) => {
-                                  return <Carousel item={item} key={index}/>
-                              })}
-                          </Slider> : null}
-                  </div>
-                  <Offer/>
-              </div>
-                <div className='G-flex G-center G-flex-wrap'   style={{margin:'50px 0'}}>
-                    <ShippingInfo/>
+        <div className='G-flex-column'>
+            <div className='G-justify-between'>
+                <div className='P-home-slick'>
+                    {/*{topSlick.length ?*/}
+                    {/*    <Slider {...settingsSlider}>*/}
+                    {/*        {topSlick.map((item, index) => {*/}
+                    {/*            return <Carousel item={item} key={index}/>*/}
+                    {/*        })}*/}
+                    {/*    </Slider> : null}*/}
                 </div>
-
+                {/*<Offer/>*/}
+            </div>
+            <div className='G-flex G-center G-flex-wrap' style={{margin: '50px 0'}}>
+                {/*<ShippingInfo/>*/}
             </div>
 
-            {/*============================== SLick Slider end ==============================*/}
+        </div>
+
+        {/*============================== SLick Slider end ==============================*/}
 
 
+        {/*============================== categories content  ==============================*/}
 
-            {/*============================== categories content  ==============================*/}
 
-
-            <div className='G-container G-flex G-center P-margin-categories'>
-                <p className='P-title-categories'>CATEGORIES</p>
-                <div className='P-categories-line'></div>
-            </div>
+        <div className='G-container G-flex G-center P-margin-categories'>
+            <p className='P-title-categories'>CATEGORIES</p>
+            <div className='P-categories-line'></div>
+        </div>
 
         <div className='G-flex G-flex-wrap G-center'>
             {categoriesClient.length ? categoriesClient.map((item, index) => {
@@ -177,7 +176,7 @@ const Home = () => {
             }) : <Loading/>}
         </div>
 
-         slick carousel sponsors
+        {/* ============================================= slick carousel sponsors =============================================*/}
         <Slider {...settingsSponsor} >
             {sponsor.map((item, index) => {
                 return <Sponsor item={item} key={index}/>

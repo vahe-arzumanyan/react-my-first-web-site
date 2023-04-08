@@ -13,7 +13,29 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         categoriesImg: null
     })
 
+    const [errorText, setErrorText] = useState({
+        name: '',
+        img: ''
+    })
 
+// ===================== validation =====================
+    const validation = () => {
+        let validate = true;
+        let errorString = {
+            name: '',
+            img: ''
+        }
+
+        if (!addCategoriesInfo.categoriesName) {
+            errorString.name = 'fill in the request name'
+            validate = false;
+        }
+        if (!addCategoriesInfo.categoriesImg) {
+            errorString.img = 'fill in the request image'
+        }
+        setErrorText(errorString)
+        return validate
+    }
 
     // ===================== edit segment start =====================
 
@@ -25,12 +47,14 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     }, [])
 
 
-
     const editData = async (id) => {
         const body = addCategoriesInfo
         delete body._id
-        await axios.put(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo/${id}`, body)
+        const result = await axios.put(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo/${id}`, body)
+        if (result) {
             getCategories()
+
+        }
     }
 
     const getCategories = async () => {
@@ -40,7 +64,6 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
             // console.log(result.data)
         }
     }
-
 
 
     const postCategories = async () => {
@@ -74,15 +97,16 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     // ==================== crud-crud post ====================
 
     const handleAddInfo = async () => {
-        postCategories()
-        await getCategories()
-        onClose()
-        if(elementEdit){
-            editData(elementEdit._id);
+        if (validation()) {
+            postCategories()
+            await getCategories()
+            onClose()
+            if (elementEdit) {
+                editData(elementEdit._id);
+            }
         }
+
     }
-
-
 
 
     return <div className='P-add-categories-modal G-center'>
@@ -90,18 +114,23 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         <div className='P-modal-categories G-flex G-flex-column G-center'>
             <label className='G-flex G-flex-column G-center'>
                 <p className='P-categories-input-name'>Categories Name</p>
-                <input type='text'
+                <input onChange={handleCategoriesName}
+                       type='text'
                        name="categoriesName"
                        value={addCategoriesInfo.categoriesName}
-                       onChange={handleCategoriesName}
-                       className='P-categories-input'/>
+                       className='P-categories-input'
+                />
+                <p className='P-error-text'>{errorText.name}</p>
+
             </label>
             <label className='G-center'>
                 <div className='P-choose-img G-flex-column G-center'>
                     <p className='P-choose-img-categories'>choose image</p>
                     <div className='G-choose-img'>
-                    {addCategoriesInfo.categoriesImg && <img src={addCategoriesInfo.categoriesImg} alt="img"/>}
-                    <input onChange={chooseCategoriesImg} type='file' />
+                        {addCategoriesInfo.categoriesImg && <img src={addCategoriesInfo.categoriesImg} alt="img"/>}
+                        <input onChange={chooseCategoriesImg} type='file'
+                        />
+                        <p className='P-error-text'>{errorText.img}</p>
                     </div>
                 </div>
 
