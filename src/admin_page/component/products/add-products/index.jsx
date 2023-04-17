@@ -20,17 +20,64 @@ const AddProducts = ({productsItem, onClose}) => {
         categories: ''
     })
 
+
+    // ================ validation ================
+    const [errorText, setErrorText] = useState({
+        name: '',
+        description: '',
+        img: '',
+        price: '',
+        categories: ''
+    })
+
+    const validation = () => {
+        let validate = true;
+        const errorString = {
+            name: '',
+            description: '',
+            img: '',
+            price: '',
+            categories: ''
+        }
+
+        if (!addProductsInfo.productsName) {
+            errorString.name = 'fill in the required name'
+            validate = false
+        }
+        if (!addProductsInfo.productsDescription) {
+            errorString.description = 'fill in the required description'
+            validate = false
+        }
+        if (!addProductsInfo.productsImg) {
+            errorString.img = 'fill in the required image'
+            validate = false
+        }
+        if (!addProductsInfo.productsPrise) {
+            errorString.price = 'fill in the required price'
+            validate = false
+        }
+        if (!addProductsInfo.categories) {
+            errorString.categories = 'select in the required categories'
+        }
+        setErrorText(errorString)
+        return validate
+    }
+
+
     // ================ input products img ================
 
     // make empty input field
 
     const handleAddProducts = async () => {
-        if (productsItem) {
-            await updateProductServer(productsItem._id)
-        } else {
-            await addProductsServer()
-            onClose()
+        if(validation()){
+            if (productsItem) {
+                await updateProductServer(productsItem._id)
+            } else {
+                await addProductsServer()
+                onClose()
+            }
         }
+
 
         // make input field empty
 
@@ -127,31 +174,35 @@ const AddProducts = ({productsItem, onClose}) => {
                             <input onChange={chooseProducts} type='file'/>
                         </div>
                     </div>
+                    <p className='P-error-text-product'>{errorText.img}</p>
                 </label>
                 <div className='P-products-info G-flex-column G-center'>
-                    <label>
+                    <label className='G-flex-column G-align-center'>
                         <p>product name</p>
                         <input type='text'
                                onChange={handleProductChange}
                                name='productsName'
                                value={addProductsInfo.productsName}
                         />
+                        <p className='P-error-text-product'>{errorText.name}</p>
                     </label>
-                    <label>
+                    <label className='G-flex-column G-align-center'>
                         <p>product description</p>
                         <input type='text'
                                onChange={handleProductChange}
                                name='productsDescription'
                                value={addProductsInfo.productsDescription}
                         />
+                        <p className='P-error-text-product'>{errorText.description}</p>
                     </label>
-                    <label>
+                    <label className='G-flex-column G-align-center'>
                         <p>product price</p>
                         <input type='number'
                                onChange={handleProductChange}
                                name='productsPrise'
                                value={addProductsInfo.productsPrise}
                         />
+                        <p className='P-error-text-product'>{errorText.price}</p>
                     </label>
 
                 </div>
@@ -165,8 +216,8 @@ const AddProducts = ({productsItem, onClose}) => {
                             return <option value={index} key={index}>
                                 {item.categoriesName}</option>
                         }) : null}
-
                     </select>
+                    <p className='P-error-text'>{errorText.categories}</p>
                 </div>
 
                 {/* modal / add - close */}

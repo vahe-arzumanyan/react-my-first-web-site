@@ -37,7 +37,7 @@ const Home = () => {
                     slidesToShow: 1,
                     slidesToScroll: 3,
                     infinite: true,
-                    dots: true
+                    dots: false
                 }
             },
             {
@@ -121,72 +121,71 @@ const Home = () => {
 
 // ============================== JSX ==============================
 
-    return <div className='G-container'>
-
-        {/*============================== SLick Slider start ==============================*/}
-
-        <div className='G-flex-column'>
-            <div className='G-justify-between'>
-                <div className='P-home-slick'>
-                    {/*{topSlick.length ?*/}
-                    {/*    <Slider {...settingsSlider}>*/}
-                    {/*        {topSlick.map((item, index) => {*/}
-                    {/*            return <Carousel item={item} key={index}/>*/}
-                    {/*        })}*/}
-                    {/*    </Slider> : null}*/}
-                </div>
-                {/*<Offer/>*/}
-            </div>
-            <div className='G-flex G-center G-flex-wrap' style={{margin: '50px 0'}}>
-                {/*<ShippingInfo/>*/}
-            </div>
-
-        </div>
-
-        {/*============================== SLick Slider end ==============================*/}
-
-
-        {/*============================== categories content  ==============================*/}
-
-
-        <div className='G-container G-flex G-center P-margin-categories'>
-            <p className='P-title-categories'>CATEGORIES</p>
-            <div className='P-categories-line'></div>
-        </div>
-
-        <div className='G-flex G-flex-wrap G-center'>
-            {categoriesClient.length ? categoriesClient.map((item, index) => {
-                return <CategoriesClient key={index}
-                                         item={item}/>
-            }) : <Loading/>}
-        </div>
-
-        {/*============================== product content  ==============================*/}
+    return <>
         <div className='G-container'>
-            <div className='G-flex G-center P-margin-categories'>
-                <p className='P-title-categories'>FEATURED PRODUCTS</p>
+
+            {/*============================== SLick Slider start ==============================*/}
+
+            <div className='G-flex-column'>
+                <div className='G-justify-between'>
+                    <div className='P-home-slick'>
+                        {topSlick.length ?
+                            <Slider {...settingsSlider}>
+                                {topSlick.map((item, index) => {
+                                    return <Carousel item={item} key={index}/>
+                                })}
+                            </Slider> : null}
+                    </div>
+                    {/*============================== offer content ==============================*/}
+                    <Offer/>
+                </div>
+                {/*============================== shipping content ==============================*/}
+                <ShippingInfo/>
+            </div>
+
+            {/*============================== SLick Slider end ==============================*/}
+
+
+            {/*============================== categories content  ==============================*/}
+
+
+            <div className='G-container G-flex G-center P-margin-categories'>
+                <p className='P-title-categories'>CATEGORIES</p>
                 <div className='P-categories-line'></div>
             </div>
+
+            <div className='G-flex G-flex-wrap G-center'>
+                {categoriesClient.length ? categoriesClient.map((item, index) => {
+                    return <CategoriesClient key={index}
+                                             item={item}/>
+                }) : <Loading/>}
+            </div>
+
+            {/*============================== product content  ==============================*/}
+            <div className='G-container'>
+                <div className='G-flex G-center P-margin-categories'>
+                    <p className='P-title-categories'>FEATURED PRODUCTS</p>
+                    <div className='P-categories-line'></div>
+                </div>
+            </div>
+            <div className='G-flex-wrap G-center'>
+                {productsClient.length ? productsClient.map((item, index) => {
+                    return <ProductClient
+                        key={index}
+                        item={item}/>
+                }) : <Loading/>}
+            </div>
+
+            {/* ============================================= slick carousel sponsors =============================================*/}
+            <Slider {...settingsSponsor} >
+                {sponsor.map((item, index) => {
+                    return <Sponsor item={item} key={index}/>
+                })}
+            </Slider>
+
         </div>
-        <div className='G-flex-wrap G-center'>
-            {productsClient.length ? productsClient.map((item, index) => {
-                return <ProductClient
-                    key={index}
-                    item={item}/>
-            }) : <Loading/>}
-        </div>
-
-        {/* ============================================= slick carousel sponsors =============================================*/}
-        <Slider {...settingsSponsor} >
-            {sponsor.map((item, index) => {
-                return <Sponsor item={item} key={index}/>
-            })}
-        </Slider>
-
-
-        <Footer/>
-
-    </div>
+        <Footer />
+    </>
 }
 
 export default Home;

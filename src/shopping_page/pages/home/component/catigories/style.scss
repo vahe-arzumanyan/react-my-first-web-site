@@ -4,13 +4,15 @@
   height: 100px;
   margin: 15px;
   border-radius: 15px;
-  background-color: gray;
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 0%, rgba(169,181,191,1) 100%);
   transition: 0.3s;
 
   :hover {
     background-color: #F5F5F5;
     border-radius: 15px;
     transition: 0.3s;
+
   }
 }
 

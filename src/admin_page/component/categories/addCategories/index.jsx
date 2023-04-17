@@ -13,12 +13,13 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         categoriesImg: null
     })
 
+
+// ===================== validation =====================
     const [errorText, setErrorText] = useState({
         name: '',
         img: ''
     })
 
-// ===================== validation =====================
     const validation = () => {
         let validate = true;
         let errorString = {
