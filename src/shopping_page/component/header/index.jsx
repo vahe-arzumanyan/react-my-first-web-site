@@ -14,10 +14,12 @@ const Header = () => {
         <div className='P-header G-center'>
             <div className='G-container'>
                 <div className='G-flex G-align-center G-justify-between'>
-                    <div className='G-flex'>
-                        <h1 className='P-logo-custom'>CUSTOM</h1>
-                        <h1 className='P-logo-shop'>SHOP</h1>
-                    </div>
+                   <NavLink to={"/Home"}>
+                       <div className='G-flex'>
+                           <h1 className='P-logo-custom'>CUSTOM</h1>
+                           <h1 className='P-logo-shop'>SHOP</h1>
+                       </div>
+                   </NavLink>
                     <ul className='G-flex P-header-ul'>
                         <li>
                             <NavLink to={"/Home"}>Home</NavLink>

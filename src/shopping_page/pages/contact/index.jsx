@@ -4,7 +4,6 @@ import './style.scss'
 
 const Contact = () => {
     return <div className='P-Contact'>
-
     </div>
 
 }
