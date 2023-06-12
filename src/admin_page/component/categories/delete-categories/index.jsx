@@ -4,6 +4,7 @@ import {useDispatch} from "react-redux";
 import {addCategoriesList} from '../../../../store/combine-reducer/reducers/categories';
 import {addProducts} from "../../../../store/combine-reducer/reducers/products";
 import axios from "axios";
+import {CONNECTION_API} from "../../../../connect-api/connect";
 
 const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     const dispatch = useDispatch()
@@ -21,18 +22,18 @@ const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     }
 
     const deleteProduct = async () => {
-        await axios.delete(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo/${productsItem._id}`)
+        await axios.delete(`${CONNECTION_API}addProductsInfo/${productsItem._id}`)
         await getProductServer()
     }
 
     const deleteCategoriesList = async () => {
-        await axios.delete(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo/${element._id}`)
+        await axios.delete(`${CONNECTION_API}addCategoriesInfo/${element._id}`)
         await getCategories()
 
     }
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo')
+        const result = await axios.get(`${CONNECTION_API}addCategoriesInfo`)
         if (result.data) {
             dispatch(addCategoriesList(result.data))
             onClose()
@@ -40,7 +41,7 @@ const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     }
 
     const getProductServer = async () => {
-        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo')
+        const result = await axios.get(`${CONNECTION_API}addProductsInfo`)
         if (result.data) {
             dispatch(addProducts(result.data))
             onClose()

@@ -21,7 +21,7 @@ const LoginRegister = () => {
         <div className="P-login-modal-bg" onClick={handleClose}></div>
         <div className="P-login-modal-container">
             <button onClick={handleLoginRegisterClick} className='P-login-register G-center'>
-                {registerLoginModal ? "Login" : "Register"}
+                {registerLoginModal ? "Register" : "Login"}
             </button>
             <div className='G-center' style={{marginTop: '70px', width: '100%'}}>
                 <LoginForm registerLoginModal={registerLoginModal}/>

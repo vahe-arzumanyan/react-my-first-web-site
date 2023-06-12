@@ -18,7 +18,8 @@ import CategoriesClient from "./component/catigories";
 import ProductClient from "./component/product";
 import useSponsor from "../../component/sponsor/sponsor-product-hook";
 import Sponsor from "../../component/sponsor";
-
+// ************ CONNECT API ************
+import {CONNECTION_API} from "../../../connect-api/connect";
 
 const Home = () => {
     const settingsSlider = {
@@ -106,14 +107,14 @@ const Home = () => {
     }, [])
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo')
+        const result = await axios.get(`${CONNECTION_API}addCategoriesInfo`)
         if (result.data) {
             setCategoriesClient(result.data)
         }
     }
 
     const getProductsServer = async () => {
-        const result = await axios.get("https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo")
+        const result = await axios.get(`${CONNECTION_API}addProductsInfo`)
         if (result.data) {
             setProductsClient(result.data)
         }

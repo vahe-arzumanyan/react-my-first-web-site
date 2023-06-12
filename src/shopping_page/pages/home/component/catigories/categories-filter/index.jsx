@@ -5,6 +5,7 @@ import CustomFilterCheckbox from "../../../custom-filter-checkbox";
 import CategoriesFilterProduct from "../categories-filter-product";
 import Loading from "../../../../../../admin_page/component/loading";
 import axios from 'axios';
+import {CONNECTION_API} from "../../../../../../connect-api/connect";
 
 
 const CategoriesFilter = () => {
@@ -29,7 +30,7 @@ const CategoriesFilter = () => {
     // ==================== axios request ====================
 
     const getFilterProducts = async () => {
-        const result = await axios.get("https://crudcrud.com/api/e997f1cf4348411eb31ec38e5d8bfca0/addProductsInfo")
+        const result = await axios.get(`${CONNECTION_API}addProductsInfo`)
         setCategoriesProductInfo(result.data)
         if (filterCheckedValue === "1000") {
             setCategoriesProductInfo(result.data)

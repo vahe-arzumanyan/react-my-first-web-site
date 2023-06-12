@@ -3,6 +3,7 @@ import './style.scss'
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {addCategoriesList} from "../../../../store/combine-reducer/reducers/categories";
+import {CONNECTION_API} from "../../../../connect-api/connect";
 
 
 const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) => {
@@ -41,7 +42,6 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     // ===================== edit segment start =====================
 
     useEffect(() => {
-        // console.log(elementEdit)
         if (elementEdit) {
             setCategoriesInfo(elementEdit)
         }
@@ -51,24 +51,22 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
     const editData = async (id) => {
         const body = addCategoriesInfo
         delete body._id
-        const result = await axios.put(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo/${id}`, body)
+        const result = await axios.put(`${CONNECTION_API}addCategoriesInfo/${id}`, body)
         if (result) {
             getCategories()
-
         }
     }
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo')
+        const result = await axios.get(`${CONNECTION_API}addCategoriesInfo`)
         if (result.data) {
             dispatch(addCategoriesList(result.data))
-            // console.log(result.data)
         }
     }
 
 
     const postCategories = async () => {
-        const result = await axios.post('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo', addCategoriesInfo)
+        const result = await axios.post(`${CONNECTION_API}addCategoriesInfo`, addCategoriesInfo)
         if (result.data) {
             await getCategories()
             onClose()
@@ -78,7 +76,6 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
     const handleCategoriesName = (e) => {
         setCategoriesInfo({...addCategoriesInfo, [e.target.name]: e.target.value})
-        // console.log(addCategoriesInfo)
     }
 
 
@@ -102,6 +99,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
             postCategories()
             await getCategories()
             onClose()
+
             if (elementEdit) {
                 editData(elementEdit._id);
             }

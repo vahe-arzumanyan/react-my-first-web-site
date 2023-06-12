@@ -5,9 +5,11 @@ import axios from "axios";
 import {addProducts} from "../../../../store/combine-reducer/reducers/products";
 import {useDispatch, useSelector} from "react-redux";
 import {pushProduct} from "../../../../store/combine-reducer/reducers/products";
+import {CONNECTION_API} from "../../../../connect-api/connect";
 
 
 const AddProducts = ({productsItem, onClose}) => {
+
     const categoriesList = useSelector(state => state.Categories.categoriesList)
     const productList = useSelector(state => state.Products.productList)
     const dispatch = useDispatch();
@@ -124,20 +126,20 @@ const AddProducts = ({productsItem, onClose}) => {
 
     const handleProductChange = (e) => {
         setAddProductsInfo({...addProductsInfo, [e.target.name]: e.target.value})
-        // setErrorText({...setErrorText, [e.target.name]: ''})
+
     }
 
     // *********************** AXIOS **********************
 
     const addProductsServer = async () => {
-        const result = await axios.post("https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo", addProductsInfo)
+        const result = await axios.post(`${CONNECTION_API}addProductsInfo`, addProductsInfo)
         if (result.data) {
             await getProductsServer()
         }
     }
 
     const getProductsServer = async () => {
-        const result = await axios.get("https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo")
+        const result = await axios.get(`${CONNECTION_API}addProductsInfo`)
         if (result.data) {
             dispatch(addProducts(result.data))
         }
@@ -146,7 +148,7 @@ const AddProducts = ({productsItem, onClose}) => {
     const updateProductServer = async (id) => {
         const body = addProductsInfo;
         delete body._id
-        const result = await axios.put(`https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo/${id}`, body)
+        const result = await axios.put(`${CONNECTION_API}addProductsInfo/${id}`, body)
         if (result) {
             getProductsServer()
             onClose()

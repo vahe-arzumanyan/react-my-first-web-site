@@ -8,7 +8,7 @@ import Loading from "../loading";
 import {useDispatch, useSelector} from "react-redux";
 import {addProducts} from "../../../store/combine-reducer/reducers/products";
 import ProductsList from "./products-list";
-
+import {CONNECTION_API} from "../../../connect-api/connect";
 
 
 const Products = () => {
@@ -16,7 +16,7 @@ const Products = () => {
     const dispatch = useDispatch();
 
     const getProductsServer = async () => {
-        const result = await axios.get("https://crudcrud.com/api/930f836115ae432ead0852485b104105/addProductsInfo")
+        const result = await axios.get(`${CONNECTION_API}addProductsInfo`)
         if (result.data) {
             dispatch(addProducts(result.data))
         }

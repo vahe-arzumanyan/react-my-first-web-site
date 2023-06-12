@@ -8,6 +8,7 @@ import {editCategories} from "../../../store/combine-reducer/reducers/categories
 import GetCategoriesAdmin from "./getCategories";
 import CustomAddBtn from "./button-categories";
 import Loading from "../loading";
+import {CONNECTION_API} from "../../../connect-api/connect"
 
 
 const Categories = () => {
@@ -16,10 +17,9 @@ const Categories = () => {
 
 
     const getCategories = async () => {
-        const result = await axios.get('https://crudcrud.com/api/930f836115ae432ead0852485b104105/addCategoriesInfo')
+        const result = await axios.get(`${CONNECTION_API}addCategoriesInfo`)
         if (result.data) {
             dispatch(addCategoriesList(result.data))
-            console.log(result.data)
         }
     }
 

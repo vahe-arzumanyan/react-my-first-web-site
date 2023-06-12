@@ -1,0 +1,1 @@
+export const CONNECTION_API = 'https://crudcrud.com/api/7a5e7cb3733748c388b8e8c6212c97b1/'
