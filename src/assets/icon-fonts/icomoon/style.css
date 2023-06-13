@@ -74,6 +74,8 @@
 
 .icon-heart-fill:before {
     content: "\e900";
+    color: goldenrod;
+    font-size: 18px;
 }
 
 .icon-basket:before {
