@@ -10,7 +10,6 @@ const CustomInput = ({onChange, value, name, type, errorText}) => {
 
     return <div className='G-flex-column' style={{marginTop:'10px'}}>
         <label className='G-input-name'>{name}</label>
-
         <input className='G-input-line'
             onChange={handleChange}
             value={value}
