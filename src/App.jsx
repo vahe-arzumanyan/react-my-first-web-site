@@ -13,6 +13,7 @@ const App = () => {
         const localToken = localStorage.getItem('userToken')
         setToken(localToken)
     }, [])
+
     return <div>
         {token ? <AdminPage/> : <ShoppingPage/>}
     </div>
