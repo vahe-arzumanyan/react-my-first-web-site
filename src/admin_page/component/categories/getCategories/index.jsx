@@ -4,7 +4,7 @@ import AddCategories from "../addCategories";
 import DeleteCustomModal from "../delete-categories";
 
 
-const GetCategoriesAdmin = ({getElement, index, onCLose}) => {
+const GetCategoriesAdmin = ({getElement, index}) => {
 
     const [categoriesEditModal, setCategoriesEditModal] = useState(false)
     const [categoriesDeleteModal, setCategoriesDeleteModal] = useState(false)
@@ -33,8 +33,7 @@ const GetCategoriesAdmin = ({getElement, index, onCLose}) => {
 
         {categoriesEditModal ? <AddCategories onClose={handleCategoriesEditModal}
                                               elementEdit={getElement}
-                                              elementIndex={index}
-                                              categoriesEditBtn={handleCategoriesEditModal}/> : null}
+                                              elementIndex={index}/> : null}
 
         {/* ========================== categories delete ========================== */}
 

@@ -29,7 +29,6 @@ const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     const deleteCategoriesList = async () => {
         await axios.delete(`${CONNECTION_API}addCategoriesInfo/${element._id}`)
         await getCategories()
-
     }
 
     const getCategories = async () => {
@@ -52,21 +51,13 @@ const DeleteCustomModal = ({element, productsItem, name, onClose}) => {
     return <div className='P-delete-categories-modal G-center'>
         <div className='P-delete-modal-bgColor'></div>
         <div className='P-delete-ask G-center G-flex-column'>
-
-
             <p className='P-question-delete'>Are you sure you want to delete<span>
-               { name === "categoriesX" ? element.categoriesName : productsItem.productsName}
-
+               {name === "categoriesX" ? element.categoriesName : productsItem.productsName}
             </span>
             </p>
-
-
             <div className='G-flex G-justify-between P-delete-yes-no'>
-
-
                 <button onClick={handleDeleteIndex}>Yes</button>
                 <button onClick={onClose}>No</button>
-
             </div>
         </div>
     </div>

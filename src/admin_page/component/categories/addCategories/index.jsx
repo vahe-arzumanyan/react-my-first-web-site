@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import './style.scss'
 import axios from "axios";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {addCategoriesList} from "../../../../store/combine-reducer/reducers/categories";
 import {CONNECTION_API} from "../../../../connect-api/connect";
 
 
-const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) => {
-    const categoriesList = useSelector(state => state.Categories.categoriesList)
+const AddCategories = ({onClose, elementEdit}) => {
     const dispatch = useDispatch();
     const [addCategoriesInfo, setCategoriesInfo] = useState({
         categoriesName: "",
@@ -53,7 +52,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
         delete body._id
         const result = await axios.put(`${CONNECTION_API}addCategoriesInfo/${id}`, body)
         if (result) {
-            getCategories()
+            await getCategories()
         }
     }
 
@@ -94,17 +93,17 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
 
     // ==================== crud-crud post ====================
 
-    const handleAddInfo = async () => {
-        if (validation()) {
-            postCategories()
-            await getCategories()
-            onClose()
 
+
+    const handleAddCategories = async () => {
+        if (validation()) {
             if (elementEdit) {
-                editData(elementEdit._id);
+                await editData(elementEdit._id)
+                onClose()
+            } else {
+                await postCategories()
             }
         }
-
     }
 
 
@@ -126,7 +125,9 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
                 <div className='P-choose-img G-flex-column G-center'>
                     <p className='P-choose-img-categories'>choose image</p>
                     <div className='G-choose-img'>
-                        {addCategoriesInfo.categoriesImg && <img src={addCategoriesInfo.categoriesImg} alt="img"/>}
+                        {addCategoriesInfo.categoriesImg &&
+                        <div style={{backgroundImage: `url("${addCategoriesInfo.categoriesImg}")`}}
+                             className='P-add-categories-img G-image-cover' alt="#"></div>}
                         <input onChange={chooseCategoriesImg} type='file'
                         />
                         <p className='P-error-text'>{errorText.img}</p>
@@ -136,7 +137,7 @@ const AddCategories = ({onClose, elementEdit, elementIndex, categoriesEditBtn}) 
             </label>
 
             <div className='G-flex G-justify-between P-add-categories-content'>
-                <button onClick={handleAddInfo}>add</button>
+                <button onClick={handleAddCategories}>add</button>
                 <button onClick={handleCloseModal}>close</button>
             </div>
         </div>

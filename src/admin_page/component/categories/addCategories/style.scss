@@ -1,6 +1,6 @@
 // add categories modal start
 
-.P-add-categories-modal{
+.P-add-categories-modal {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -9,13 +9,14 @@
   z-index: 999;
 }
 
-.P-add-categories-modal-bgColor{
+.P-add-categories-modal-bgColor {
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: black;
   opacity: 0.4;
 }
+
 // add categories modal end
 .P-modal-categories {
   width: 300px;
@@ -58,27 +59,39 @@
   }
 }
 
-.P-choose-img-categories{
+.P-choose-img-categories {
   font-size: 20px;
   font-family: monospace;
   color: #a52417;
-
 }
-.P-add-categories-content{
+
+.P-add-products-img{
+  max-width: 200px;
+  width: 100%;
+  height: 200px;
+}
+
+.P-add-categories-img {
+  //max-width: 200px;
+  //width: 100%;
+  width: 200px;
+  height: 200px;
+}
+
+.P-add-categories-content {
   max-width: 150px;
   width: 100%;
-  max-height: 150px;
-  height: 100%;
+  height: 150px;
   margin: 30px 0;
 
-  & button{
+  & button {
     font-size: 16px;
     font-family: monospace;
     color: darkslateblue;
   }
 }
 
-.P-error-text{
+.P-error-text {
   color: #530e07;
   font-family: monospace;
   font-size: 16px;

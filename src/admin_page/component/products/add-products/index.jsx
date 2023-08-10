@@ -71,7 +71,7 @@ const AddProducts = ({productsItem, onClose}) => {
     // make empty input field
 
     const handleAddProducts = async () => {
-        if(validation()){
+        if (validation()) {
             if (productsItem) {
                 await updateProductServer(productsItem._id)
             } else {
@@ -150,7 +150,7 @@ const AddProducts = ({productsItem, onClose}) => {
         delete body._id
         const result = await axios.put(`${CONNECTION_API}addProductsInfo/${id}`, body)
         if (result) {
-            getProductsServer()
+            await getProductsServer()
             onClose()
         }
     }
@@ -172,7 +172,10 @@ const AddProducts = ({productsItem, onClose}) => {
 
                         <p className='P-choose-img-categories'>choose image</p>
                         <div className='G-choose-img'>
-                            {addProductsInfo.productsImg && <img src={addProductsInfo.productsImg}/>}
+
+                            {addProductsInfo.productsImg &&
+                            <div style={{backgroundImage: `url("${addProductsInfo.productsImg}")`}} alt="#"
+                                 className='P-add-products-img G-image-cover'></div>}
                             <input onChange={chooseProducts} type='file'/>
                         </div>
                     </div>
